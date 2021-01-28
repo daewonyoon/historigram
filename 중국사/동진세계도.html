@@ -2,90 +2,41 @@
 <html>
 <head>
 <meta charset='UTF-8'><meta name='viewport' content='width=device-width initial-scale=1'>
-<title>동진세계도</title><link href='https://fonts.loli.net/css?family=Open+Sans:400italic,700italic,700,400&subset=latin,latin-ext' rel='stylesheet' type='text/css' /><style type='text/css'>html {overflow-x: initial !important;}:root { --node-fill: #ECECFF; --node-border: #CCCCFF; --note-fill: #fff5ad; --note-border: #aaaa33; --cluster-fill: #ffffde  !important; --cluster-border: #aaaa33  !important; }
-.mermaid .label { color: var(--text-color); }
-.node rect, .node circle, .node ellipse, .node polygon { fill: var(--node-fill); stroke: var(--node-border); stroke-width: 1px; }
-.edgePath .path { stroke: var(--text-color); }
-.edgeLabel { background-color: var(--bg-color); }
-.cluster rect { fill: rgb(255, 255, 222) !important; rx: 4 !important; stroke: rgb(170, 170, 51) !important; stroke-width: 1px !important; }
-.cluster text { fill: var(--text-color); }
-.actor { stroke: var(--node-border); fill: var(--node-fill); }
-text.actor { fill: var(--text-color); stroke: none; }
-.actor-line { stroke: grey; }
-.messageLine0 { stroke-width: 1.5; stroke: var(--text-color); }
-.messageLine1 { stroke-width: 1.5; stroke: var(--text-color); }
-#arrowhead { fill: var(--text-color); }
-#crosshead path { fill: var(--text-color)  !important; stroke: var(--text-color)  !important; }
-.messageText { fill: var(--text-color); stroke: none; }
-.labelBox { stroke: var(--node-border); fill: var(--node-fill); }
-.labelText { fill: var(--text-color); stroke: none; }
-.loopText { fill: var(--text-color); stroke: none; }
-.loopLine { stroke-width: 2; stroke: var(--node-border); }
-.note { stroke: var(--note-border); fill: var(--note-fill); }
-.noteText { fill: var(--text-color); stroke: none; font-size: 14px; }
-.section { stroke: none; opacity: 0.2; }
-.section0 { fill: rgba(102, 102, 255, 0.49); }
-.section2 { fill: rgb(255, 244, 0); }
-.section1, .section3 { fill: white; opacity: 0.2; }
-.sectionTitle0 { fill: var(--text-color); }
-.sectionTitle1 { fill: var(--text-color); }
-.sectionTitle2 { fill: var(--text-color); }
-.sectionTitle3 { fill: var(--text-color); }
-.sectionTitle { text-anchor: start; font-size: 11px; }
-.grid .tick { stroke: lightgrey; opacity: 0.3; shape-rendering: crispEdges; }
-.grid path { stroke-width: 0; }
-.today { fill: none; stroke: red; stroke-width: 2px; }
-.task { stroke-width: 2; }
-.taskText { text-anchor: middle; font-size: 11px; }
-.taskTextOutsideRight { fill: black; text-anchor: start; font-size: 11px; }
-.taskTextOutsideLeft { fill: black; text-anchor: end; font-size: 11px; }
-.taskText0, .taskText1, .taskText2, .taskText3 { fill: white; }
-.task0, .task1, .task2, .task3 { fill: rgb(138, 144, 221); stroke: rgb(83, 79, 188); }
-.taskTextOutside0, .taskTextOutside2 { fill: var(--text-color); }
-.taskTextOutside1, .taskTextOutside3 { fill: var(--text-color); }
-.active0, .active1, .active2, .active3 { fill: rgb(191, 199, 255); stroke: rgb(83, 79, 188); }
-.activeText0, .activeText1, .activeText2, .activeText3 { fill: black !important; }
-.done0, .done1, .done2, .done3 { stroke: grey; fill: lightgrey; stroke-width: 2; }
-.doneText0, .doneText1, .doneText2, .doneText3 { fill: black !important; }
-.crit0, .crit1, .crit2, .crit3 { stroke: rgb(255, 136, 136); fill: red; stroke-width: 2; }
-.activeCrit0, .activeCrit1, .activeCrit2, .activeCrit3 { stroke: rgb(255, 136, 136); fill: rgb(191, 199, 255); stroke-width: 2; }
-.doneCrit0, .doneCrit1, .doneCrit2, .doneCrit3 { stroke: rgb(255, 136, 136); fill: lightgrey; stroke-width: 2; cursor: pointer; shape-rendering: crispEdges; }
-.doneCritText0, .doneCritText1, .doneCritText2, .doneCritText3 { fill: black !important; }
-.activeCritText0, .activeCritText1, .activeCritText2, .activeCritText3 { fill: black !important; }
-.titleText { text-anchor: middle; font-size: 18px; fill: black; }
-.node text { font-size: 14px; }
-div.mermaidTooltip { position: absolute; text-align: center; max-width: 200px; padding: 2px; font-size: 12px; background: rgb(255, 255, 222); border: 1px solid rgb(170, 170, 51); border-radius: 2px; pointer-events: none; z-index: 100; }
-#write .md-diagram-panel .md-diagram-panel-preview div { width: initial; }
+<title>동진세계도</title><link href='https://fonts.loli.net/css?family=Open+Sans:400italic,700italic,700,400&subset=latin,latin-ext' rel='stylesheet' type='text/css' /><style type='text/css'>html {overflow-x: initial !important;}:root { --node-fill: #ECECFF; --node-border: #CCCCFF; --cluster-fill: #ffffde; --cluster-border: #aaaa33; --note-fill: #fff5ad; --note-border: #aaaa33; --mermaid-color: var(--text-color); }
 
 
-:root { --bg-color:#ffffff; --text-color:#333333; --select-text-bg-color:#B5D6FC; --select-text-font-color:auto; --monospace:"Lucida Console",Consolas,"Courier",monospace; }
+:root { --bg-color:#ffffff; --text-color:#333333; --select-text-bg-color:#B5D6FC; --select-text-font-color:auto; --monospace:"Lucida Console",Consolas,"Courier",monospace; --title-bar-height:20px; }
+.mac-os-11 { --title-bar-height:28px; }
 html { font-size: 14px; background-color: var(--bg-color); color: var(--text-color); font-family: "Helvetica Neue", Helvetica, Arial, sans-serif; -webkit-font-smoothing: antialiased; }
-body { margin: 0px; padding: 0px; height: auto; bottom: 0px; top: 0px; left: 0px; right: 0px; font-size: 1rem; line-height: 1.42857; overflow-x: hidden; background: inherit; }
+body { margin: 0px; padding: 0px; height: auto; bottom: 0px; top: 0px; left: 0px; right: 0px; font-size: 1rem; line-height: 1.42857; overflow-x: hidden; background: inherit; tab-size: 4; }
 iframe { margin: auto; }
 a.url { word-break: break-all; }
 a:active, a:hover { outline: 0px; }
 .in-text-selection, ::selection { text-shadow: none; background: var(--select-text-bg-color); color: var(--select-text-font-color); }
-#write { margin: 0px auto; height: auto; width: inherit; word-break: normal; word-wrap: break-word; position: relative; white-space: normal; overflow-x: visible; padding-top: 40px; }
+#write { margin: 0px auto; height: auto; width: inherit; word-break: normal; overflow-wrap: break-word; position: relative; white-space: normal; overflow-x: visible; padding-top: 36px; }
 #write.first-line-indent p { text-indent: 2em; }
 #write.first-line-indent li p, #write.first-line-indent p * { text-indent: 0px; }
 #write.first-line-indent li { margin-left: 2em; }
 .for-image #write { padding-left: 8px; padding-right: 8px; }
 body.typora-export { padding-left: 30px; padding-right: 30px; }
 .typora-export .footnote-line, .typora-export li, .typora-export p { white-space: pre-wrap; }
+.typora-export .task-list-item input { pointer-events: none; }
 @media screen and (max-width: 500px) {
   body.typora-export { padding-left: 0px; padding-right: 0px; }
+  #write { padding-left: 20px; padding-right: 20px; }
   .CodeMirror-sizer { margin-left: 0px !important; }
   .CodeMirror-gutters { display: none !important; }
 }
-#write li > figure:first-child { margin-top: -20px; }
+#write li > figure:last-child { margin-bottom: 0.5rem; }
 #write ol, #write ul { position: relative; }
-img { max-width: 100%; vertical-align: middle; }
-button, input, select, textarea { color: inherit; font-style: inherit; font-variant: inherit; font-weight: inherit; font-stretch: inherit; font-size: inherit; line-height: inherit; font-family: inherit; }
+img { max-width: 100%; vertical-align: middle; image-orientation: from-image; }
+button, input, select, textarea { color: inherit; font: inherit; }
 input[type="checkbox"], input[type="radio"] { line-height: normal; padding: 0px; }
 *, ::after, ::before { box-sizing: border-box; }
 #write h1, #write h2, #write h3, #write h4, #write h5, #write h6, #write p, #write pre { width: inherit; }
 #write h1, #write h2, #write h3, #write h4, #write h5, #write h6, #write p { position: relative; }
-h1, h2, h3, h4, h5, h6 { break-after: avoid-page; break-inside: avoid; orphans: 2; }
+p { line-height: inherit; }
+h1, h2, h3, h4, h5, h6 { break-after: avoid-page; break-inside: avoid; orphans: 4; }
 p { orphans: 4; }
 h1 { font-size: 2rem; }
 h2 { font-size: 1.8rem; }
@@ -101,12 +52,13 @@ sup.md-footnote { padding: 2px 4px; background-color: rgba(238, 238, 238, 0.7); 
 sup.md-footnote a, sup.md-footnote a:hover { color: inherit; text-transform: inherit; text-decoration: inherit; }
 #write input[type="checkbox"] { cursor: pointer; width: inherit; height: inherit; }
 figure { overflow-x: auto; margin: 1.2em 0px; max-width: calc(100% + 16px); padding: 0px; }
-figure > table { margin: 0px !important; }
+figure > table { margin: 0px; }
 tr { break-inside: avoid; break-after: auto; }
 thead { display: table-header-group; }
 table { border-collapse: collapse; border-spacing: 0px; width: 100%; overflow: auto; break-inside: auto; text-align: left; }
 table.md-table td { min-width: 32px; }
 .CodeMirror-gutters { border-right: 0px; background-color: inherit; }
+.CodeMirror-linenumber { user-select: none; }
 .CodeMirror { text-align: left; }
 .CodeMirror-placeholder { opacity: 0.3; }
 .CodeMirror pre { padding: 0px 4px; }
@@ -129,32 +81,34 @@ div.hr:focus { cursor: none; }
 li div { padding-top: 0px; }
 blockquote { margin: 1rem 0px; }
 li .mathjax-block, li p { margin: 0.5rem 0px; }
+li blockquote { margin: 1rem 0px; }
 li { margin: 0px; position: relative; }
 blockquote > :last-child { margin-bottom: 0px; }
 blockquote > :first-child, li > :first-child { margin-top: 0px; }
 .footnotes-area { color: rgb(136, 136, 136); margin-top: 0.714rem; padding-bottom: 0.143rem; white-space: normal; }
 #write .footnote-line { white-space: pre-wrap; }
 @media print {
-  body, html { border: 1px solid transparent; height: 99%; break-after: avoid; break-before: avoid; }
+  body, html { border: 1px solid transparent; height: 99%; break-after: avoid; break-before: avoid; font-variant-ligatures: no-common-ligatures; }
   #write { margin-top: 0px; padding-top: 0px; border-color: transparent !important; }
   .typora-export * { -webkit-print-color-adjust: exact; }
-  html.blink-to-pdf { font-size: 13px; }
-  .typora-export #write { padding-left: 32px; padding-right: 32px; padding-bottom: 0px; break-after: avoid; }
+  .typora-export #write { break-after: avoid; }
   .typora-export #write::after { height: 0px; }
-  @page { margin: 20mm 0px; }
+  .is-mac table { break-inside: avoid; }
 }
 .footnote-line { margin-top: 0.714em; font-size: 0.7em; }
 a img, img a { cursor: pointer; }
 pre.md-meta-block { font-size: 0.8rem; min-height: 0.8rem; white-space: pre-wrap; background: rgb(204, 204, 204); display: block; overflow-x: hidden; }
 p > .md-image:only-child:not(.md-img-error) img, p > img:only-child { display: block; margin: auto; }
+#write.first-line-indent p > .md-image:only-child:not(.md-img-error) img { left: -2em; position: relative; }
 p > .md-image:only-child { display: inline-block; width: 100%; }
 #write .MathJax_Display { margin: 0.8em 0px 0px; }
 .md-math-block { width: 100%; }
 .md-math-block:not(:empty)::after { display: none; }
-[contenteditable="true"]:active, [contenteditable="true"]:focus { outline: 0px; box-shadow: none; }
+.MathJax_ref { fill: currentcolor; }
+[contenteditable="true"]:active, [contenteditable="true"]:focus, [contenteditable="false"]:active, [contenteditable="false"]:focus { outline: 0px; box-shadow: none; }
 .md-task-list-item { position: relative; list-style-type: none; }
 .task-list-item.md-task-list-item { padding-left: 0px; }
-.md-task-list-item > input { position: absolute; top: 0px; left: 0px; margin-left: -1.2em; margin-top: calc(1em - 10px); }
+.md-task-list-item > input { position: absolute; top: 0px; left: 0px; margin-left: -1.2em; margin-top: calc(1em - 10px); border: none; }
 .math { font-size: 1rem; }
 .md-toc { min-height: 3.58rem; position: relative; font-size: 0.9rem; border-radius: 10px; }
 .md-toc-content { position: relative; margin-left: 0px; }
@@ -190,22 +144,32 @@ a.md-print-anchor { white-space: pre !important; border-width: initial !importan
 .MathJax_SVG_Display, .md-inline-math .MathJax_SVG_Display { width: auto; margin: inherit; display: inline-block !important; }
 .MathJax_SVG .MJX-monospace { font-family: var(--monospace); }
 .MathJax_SVG .MJX-sans-serif { font-family: sans-serif; }
-.MathJax_SVG { display: inline; font-style: normal; font-weight: 400; line-height: normal; zoom: 90%; text-indent: 0px; text-align: left; text-transform: none; letter-spacing: normal; word-spacing: normal; word-wrap: normal; white-space: nowrap; float: none; direction: ltr; max-width: none; max-height: none; min-width: 0px; min-height: 0px; border: 0px; padding: 0px; margin: 0px; }
-.MathJax_SVG * { transition: none; }
-.MathJax_SVG_Display svg { vertical-align: middle !important; margin-bottom: 0px !important; }
+.MathJax_SVG { display: inline; font-style: normal; font-weight: 400; line-height: normal; zoom: 90%; text-indent: 0px; text-align: left; text-transform: none; letter-spacing: normal; word-spacing: normal; overflow-wrap: normal; white-space: nowrap; float: none; direction: ltr; max-width: none; max-height: none; min-width: 0px; min-height: 0px; border: 0px; padding: 0px; margin: 0px; }
+.MathJax_SVG * { transition: none 0s ease 0s; }
+.MathJax_SVG_Display svg { vertical-align: middle !important; margin-bottom: 0px !important; margin-top: 0px !important; }
 .os-windows.monocolor-emoji .md-emoji { font-family: "Segoe UI Symbol", sans-serif; }
 .md-diagram-panel > svg { max-width: 100%; }
-[lang="mermaid"] svg, [lang="flow"] svg { max-width: 100%; }
+[lang="flow"] svg, [lang="mermaid"] svg { max-width: 100%; height: auto; }
 [lang="mermaid"] .node text { font-size: 1rem; }
 table tr th { border-bottom: 0px; }
 video { max-width: 100%; display: block; margin: 0px auto; }
 iframe { max-width: 100%; width: 100%; border: none; }
 .highlight td, .highlight tr { border: 0px; }
+mark { background: rgb(255, 255, 0); color: rgb(0, 0, 0); }
+.md-html-inline .md-plain, .md-html-inline strong, mark .md-inline-math, mark strong { color: inherit; }
+mark .md-meta { color: rgb(0, 0, 0); opacity: 0.3 !important; }
+@media print {
+  .typora-export h1, .typora-export h2, .typora-export h3, .typora-export h4, .typora-export h5, .typora-export h6 { break-inside: avoid; }
+}
+.md-diagram-panel .messageText { stroke: none !important; }
+.md-diagram-panel .start-state { fill: var(--node-fill); }
+.md-diagram-panel .edgeLabel rect { opacity: 1 !important; }
+.md-require-zoom-fix foreignobject { font-size: var(--mermaid-font-zoom); }
 
 
 .CodeMirror { height: auto; }
 .CodeMirror.cm-s-inner { background: inherit; }
-.CodeMirror-scroll { overflow-y: hidden; overflow-x: auto; z-index: 3; }
+.CodeMirror-scroll { overflow: auto hidden; z-index: 3; }
 .CodeMirror-gutter-filler, .CodeMirror-scrollbar-filler { background-color: rgb(255, 255, 255); }
 .CodeMirror-gutters { border-right: 1px solid rgb(221, 221, 221); background: inherit; white-space: nowrap; }
 .CodeMirror-linenumber { padding: 0px 3px 0px 5px; text-align: right; color: rgb(153, 153, 153); }
@@ -258,8 +222,8 @@ div.CodeMirror span.CodeMirror-nonmatchingbracket { color: rgb(255, 34, 34); }
 .CodeMirror-gutter-background { position: absolute; top: 0px; bottom: 0px; z-index: 4; }
 .CodeMirror-gutter-elt { position: absolute; cursor: default; z-index: 4; }
 .CodeMirror-lines { cursor: text; }
-.CodeMirror pre { border-radius: 0px; border-width: 0px; background: 0px 0px; font-family: inherit; font-size: inherit; margin: 0px; white-space: pre; word-wrap: normal; color: inherit; z-index: 2; position: relative; overflow: visible; }
-.CodeMirror-wrap pre { word-wrap: break-word; white-space: pre-wrap; word-break: normal; }
+.CodeMirror pre { border-radius: 0px; border-width: 0px; background: 0px 0px; font-family: inherit; font-size: inherit; margin: 0px; white-space: pre; overflow-wrap: normal; color: inherit; z-index: 2; position: relative; overflow: visible; }
+.CodeMirror-wrap pre { overflow-wrap: break-word; white-space: pre-wrap; word-break: normal; }
 .CodeMirror-code pre { border-right: 30px solid transparent; width: fit-content; }
 .CodeMirror-wrap .CodeMirror-code pre { border-right: none; width: auto; }
 .CodeMirror-linebackground { position: absolute; left: 0px; right: 0px; top: 0px; bottom: 0px; z-index: 0; }
@@ -276,93 +240,390 @@ div.CodeMirror span.CodeMirror-nonmatchingbracket { color: rgb(255, 34, 34); }
 }
 
 
-:root { --side-bar-bg-color: #fafafa; --control-text-color: #777; }
-html { font-size: 16px; }
-body { font-family: "Open Sans", "Clear Sans", "Helvetica Neue", Helvetica, Arial, sans-serif; color: rgb(51, 51, 51); line-height: 1.6; }
-#write { max-width: 860px; margin: 0px auto; padding: 30px 30px 100px; }
-#write > ul:first-child, #write > ol:first-child { margin-top: 30px; }
-a { color: rgb(65, 131, 196); }
-h1, h2, h3, h4, h5, h6 { position: relative; margin-top: 1rem; margin-bottom: 1rem; font-weight: bold; line-height: 1.4; cursor: text; }
-h1:hover a.anchor, h2:hover a.anchor, h3:hover a.anchor, h4:hover a.anchor, h5:hover a.anchor, h6:hover a.anchor { text-decoration: none; }
-h1 tt, h1 code { font-size: inherit; }
-h2 tt, h2 code { font-size: inherit; }
-h3 tt, h3 code { font-size: inherit; }
-h4 tt, h4 code { font-size: inherit; }
-h5 tt, h5 code { font-size: inherit; }
-h6 tt, h6 code { font-size: inherit; }
-h1 { padding-bottom: 0.3em; font-size: 2.25em; line-height: 1.2; border-bottom: 1px solid rgb(238, 238, 238); }
-h2 { padding-bottom: 0.3em; font-size: 1.75em; line-height: 1.225; border-bottom: 1px solid rgb(238, 238, 238); }
-h3 { font-size: 1.5em; line-height: 1.43; }
-h4 { font-size: 1.25em; }
-h5 { font-size: 1em; }
-h6 { font-size: 1em; color: rgb(119, 119, 119); }
-p, blockquote, ul, ol, dl, table { margin: 0.8em 0px; }
-li > ol, li > ul { margin: 0px; }
-hr { height: 2px; padding: 0px; margin: 16px 0px; background-color: rgb(231, 231, 231); border: 0px none; overflow: hidden; box-sizing: content-box; }
-li p.first { display: inline-block; }
-ul, ol { padding-left: 30px; }
-ul:first-child, ol:first-child { margin-top: 0px; }
-ul:last-child, ol:last-child { margin-bottom: 0px; }
-blockquote { border-left: 4px solid rgb(223, 226, 229); padding: 0px 15px; color: rgb(119, 119, 119); }
-blockquote blockquote { padding-right: 0px; }
-table { padding: 0px; word-break: initial; }
-table tr { border-top: 1px solid rgb(223, 226, 229); margin: 0px; padding: 0px; }
-table tr:nth-child(2n), thead { background-color: rgb(248, 248, 248); }
-table tr th { font-weight: bold; border-width: 1px 1px 0px; border-top-style: solid; border-right-style: solid; border-left-style: solid; border-top-color: rgb(223, 226, 229); border-right-color: rgb(223, 226, 229); border-left-color: rgb(223, 226, 229); border-image: initial; border-bottom-style: initial; border-bottom-color: initial; text-align: left; margin: 0px; padding: 6px 13px; }
-table tr td { border: 1px solid rgb(223, 226, 229); text-align: left; margin: 0px; padding: 6px 13px; }
-table tr th:first-child, table tr td:first-child { margin-top: 0px; }
-table tr th:last-child, table tr td:last-child { margin-bottom: 0px; }
-.CodeMirror-lines { padding-left: 4px; }
-.code-tooltip { box-shadow: rgba(0, 28, 36, 0.3) 0px 1px 1px 0px; border-top: 1px solid rgb(238, 242, 242); }
-.md-fences, code, tt { border: 1px solid rgb(231, 234, 237); background-color: rgb(248, 248, 248); border-radius: 3px; padding: 2px 4px 0px; font-size: 0.9em; }
-code { background-color: rgb(243, 244, 244); padding: 0px 2px; }
-.md-fences { margin-bottom: 15px; margin-top: 15px; padding: 8px 1em 6px; }
-.md-task-list-item > input { margin-left: -1.3em; }
-@media print {
-  html { font-size: 13px; }
-  table, pre { break-inside: avoid; }
-  pre { word-wrap: break-word; }
+:root {
+    --side-bar-bg-color: #fafafa;
+    --control-text-color: #777;
 }
-.md-fences { background-color: rgb(248, 248, 248); }
-#write pre.md-meta-block { padding: 1rem; font-size: 85%; line-height: 1.45; background-color: rgb(247, 247, 247); border: 0px; border-radius: 3px; color: rgb(119, 119, 119); margin-top: 0px !important; }
-.mathjax-block > .code-tooltip { bottom: 0.375rem; }
-.md-mathjax-midline { background: rgb(250, 250, 250); }
-#write > h3.md-focus::before { left: -1.5625rem; top: 0.375rem; }
-#write > h4.md-focus::before { left: -1.5625rem; top: 0.285714rem; }
-#write > h5.md-focus::before { left: -1.5625rem; top: 0.285714rem; }
-#write > h6.md-focus::before { left: -1.5625rem; top: 0.285714rem; }
-.md-image > .md-meta { border-radius: 3px; padding: 2px 0px 0px 4px; font-size: 0.9em; color: inherit; }
-.md-tag { color: rgb(167, 167, 167); opacity: 1; }
-.md-toc { margin-top: 20px; padding-bottom: 20px; }
-.sidebar-tabs { border-bottom: none; }
-#typora-quick-open { border: 1px solid rgb(221, 221, 221); background-color: rgb(248, 248, 248); }
-#typora-quick-open-item { background-color: rgb(250, 250, 250); border-color: rgb(254, 254, 254) rgb(229, 229, 229) rgb(229, 229, 229) rgb(238, 238, 238); border-style: solid; border-width: 1px; }
-.on-focus-mode blockquote { border-left-color: rgba(85, 85, 85, 0.12); }
-header, .context-menu, .megamenu-content, footer { font-family: "Segoe UI", Arial, sans-serif; }
-.file-node-content:hover .file-node-icon, .file-node-content:hover .file-node-open-state { visibility: visible; }
-.mac-seamless-mode #typora-sidebar { background-color: var(--side-bar-bg-color); }
-.md-lang { color: rgb(180, 101, 77); }
-.html-for-mac .context-menu { --item-hover-bg-color: #E6F0FE; }
-#md-notification .btn { border: 0px; }
-.dropdown-menu .divider { border-color: rgb(229, 229, 229); }
+
+@include-when-export url(https://fonts.loli.net/css?family=Open+Sans:400italic,700italic,700,400&subset=latin,latin-ext);
+
+/* open-sans-regular - latin-ext_latin */
+  /* open-sans-italic - latin-ext_latin */
+    /* open-sans-700 - latin-ext_latin */
+    /* open-sans-700italic - latin-ext_latin */
+  html {
+    font-size: 16px;
+}
+
+body {
+    font-family: "Open Sans","Clear Sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
+    color: rgb(51, 51, 51);
+    line-height: 1.6;
+}
+
+#write {
+    max-width: 860px;
+  	margin: 0 auto;
+  	padding: 30px;
+    padding-bottom: 100px;
+}
+
+@media only screen and (min-width: 1400px) {
+	#write {
+		max-width: 1024px;
+	}
+}
+
+@media only screen and (min-width: 1800px) {
+	#write {
+		max-width: 1200px;
+	}
+}
+
+#write > ul:first-child,
+#write > ol:first-child{
+    margin-top: 30px;
+}
+
+a {
+    color: #4183C4;
+}
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    position: relative;
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+    font-weight: bold;
+    line-height: 1.4;
+    cursor: text;
+}
+h1:hover a.anchor,
+h2:hover a.anchor,
+h3:hover a.anchor,
+h4:hover a.anchor,
+h5:hover a.anchor,
+h6:hover a.anchor {
+    text-decoration: none;
+}
+h1 tt,
+h1 code {
+    font-size: inherit;
+}
+h2 tt,
+h2 code {
+    font-size: inherit;
+}
+h3 tt,
+h3 code {
+    font-size: inherit;
+}
+h4 tt,
+h4 code {
+    font-size: inherit;
+}
+h5 tt,
+h5 code {
+    font-size: inherit;
+}
+h6 tt,
+h6 code {
+    font-size: inherit;
+}
+h1 {
+    font-size: 2.25em;
+    line-height: 1.2;
+    border-bottom: 1px solid #eee;
+}
+h2 {
+    font-size: 1.75em;
+    line-height: 1.225;
+    border-bottom: 1px solid #eee;
+}
+
+/*@media print {
+    .typora-export h1,
+    .typora-export h2 {
+        border-bottom: none;
+        padding-bottom: initial;
+    }
+
+    .typora-export h1::after,
+    .typora-export h2::after {
+        content: "";
+        display: block;
+        height: 100px;
+        margin-top: -96px;
+        border-top: 1px solid #eee;
+    }
+}*/
+
+h3 {
+    font-size: 1.5em;
+    line-height: 1.43;
+}
+h4 {
+    font-size: 1.25em;
+}
+h5 {
+    font-size: 1em;
+}
+h6 {
+   font-size: 1em;
+    color: #777;
+}
+p,
+blockquote,
+ul,
+ol,
+dl,
+table{
+    margin: 0.8em 0;
+}
+li>ol,
+li>ul {
+    margin: 0 0;
+}
+hr {
+    height: 2px;
+    padding: 0;
+    margin: 16px 0;
+    background-color: #e7e7e7;
+    border: 0 none;
+    overflow: hidden;
+    box-sizing: content-box;
+}
+
+li p.first {
+    display: inline-block;
+}
+ul,
+ol {
+    padding-left: 30px;
+}
+ul:first-child,
+ol:first-child {
+    margin-top: 0;
+}
+ul:last-child,
+ol:last-child {
+    margin-bottom: 0;
+}
+blockquote {
+    border-left: 4px solid #dfe2e5;
+    padding: 0 15px;
+    color: #777777;
+}
+blockquote blockquote {
+    padding-right: 0;
+}
+table {
+    padding: 0;
+    word-break: initial;
+}
+table tr {
+    border-top: 1px solid #dfe2e5;
+    margin: 0;
+    padding: 0;
+}
+table tr:nth-child(2n),
+thead {
+    background-color: #f8f8f8;
+}
+table th {
+    font-weight: bold;
+    border: 1px solid #dfe2e5;
+    border-bottom: 0;
+    margin: 0;
+    padding: 6px 13px;
+}
+table td {
+    border: 1px solid #dfe2e5;
+    margin: 0;
+    padding: 6px 13px;
+}
+table th:first-child,
+table td:first-child {
+    margin-top: 0;
+}
+table th:last-child,
+table td:last-child {
+    margin-bottom: 0;
+}
+
+.CodeMirror-lines {
+    padding-left: 4px;
+}
+
+.code-tooltip {
+    box-shadow: 0 1px 1px 0 rgba(0,28,36,.3);
+    border-top: 1px solid #eef2f2;
+}
+
+.md-fences,
+code,
+tt {
+    border: 1px solid #e7eaed;
+    background-color: #f8f8f8;
+    border-radius: 3px;
+    padding: 0;
+    padding: 2px 4px 0px 4px;
+    font-size: 0.9em;
+}
+
+code {
+    background-color: #f3f4f4;
+    padding: 0 2px 0 2px;
+}
+
+.md-fences {
+    margin-bottom: 15px;
+    margin-top: 15px;
+    padding-top: 8px;
+    padding-bottom: 6px;
+}
 
 
+.md-task-list-item > input {
+  margin-left: -1.3em;
+}
 
+@media print {
+    html {
+        font-size: 13px;
+    }
+    table,
+    pre {
+        page-break-inside: avoid;
+    }
+    pre {
+        word-wrap: break-word;
+    }
+}
 
+.md-fences {
+	background-color: #f8f8f8;
+}
+#write pre.md-meta-block {
+	padding: 1rem;
+    font-size: 85%;
+    line-height: 1.45;
+    background-color: #f7f7f7;
+    border: 0;
+    border-radius: 3px;
+    color: #777777;
+    margin-top: 0 !important;
+}
+
+.mathjax-block>.code-tooltip {
+	bottom: .375rem;
+}
+
+.md-mathjax-midline {
+    background: #fafafa;
+}
+
+#write>h3.md-focus:before{
+	left: -1.5625rem;
+	top: .375rem;
+}
+#write>h4.md-focus:before{
+	left: -1.5625rem;
+	top: .285714286rem;
+}
+#write>h5.md-focus:before{
+	left: -1.5625rem;
+	top: .285714286rem;
+}
+#write>h6.md-focus:before{
+	left: -1.5625rem;
+	top: .285714286rem;
+}
+.md-image>.md-meta {
+    /*border: 1px solid #ddd;*/
+    border-radius: 3px;
+    padding: 2px 0px 0px 4px;
+    font-size: 0.9em;
+    color: inherit;
+}
+
+.md-tag {
+    color: #a7a7a7;
+    opacity: 1;
+}
+
+.md-toc { 
+    margin-top:20px;
+    padding-bottom:20px;
+}
+
+.sidebar-tabs {
+    border-bottom: none;
+}
+
+#typora-quick-open {
+    border: 1px solid #ddd;
+    background-color: #f8f8f8;
+}
+
+#typora-quick-open-item {
+    background-color: #FAFAFA;
+    border-color: #FEFEFE #e5e5e5 #e5e5e5 #eee;
+    border-style: solid;
+    border-width: 1px;
+}
+
+/** focus mode */
+.on-focus-mode blockquote {
+    border-left-color: rgba(85, 85, 85, 0.12);
+}
+
+header, .context-menu, .megamenu-content, footer{
+    font-family: "Segoe UI", "Arial", sans-serif;
+}
+
+.file-node-content:hover .file-node-icon,
+.file-node-content:hover .file-node-open-state{
+    visibility: visible;
+}
+
+.mac-seamless-mode #typora-sidebar {
+    background-color: #fafafa;
+    background-color: var(--side-bar-bg-color);
+}
+
+.md-lang {
+    color: #b4654d;
+}
+
+.html-for-mac .context-menu {
+    --item-hover-bg-color: #E6F0FE;
+}
+
+#md-notification .btn {
+    border: 0;
+}
+
+.dropdown-menu .divider {
+    border-color: #e5e5e5;
+}
+
+.ty-preferences .window-content {
+    background-color: #fafafa;
+}
+
+.ty-preferences .nav-group-item.active {
+    color: white;
+    background: #999;
+}
 
  .typora-export li, .typora-export p, .typora-export,  .footnote-line {white-space: normal;} 
 </style>
 </head>
-<body class='typora-export os-windows' >
-<div  id='write'  class = 'is-node'><div class="md-diagram-panel"><svg id="mermaidChart1723" xmlns="http://www.w3.org/2000/svg" height="100%" viewBox="0 0 1110.375 474" style="max-width:1110.375px;"><style></style><style>#mermaidChart1723 {
-    color: rgb(51, 51, 51);
-    font: normal normal 400 normal 14.4px / 23.04px "Lucida Console", Consolas, Courier, monospace;
-  }</style><g transform="translate(32, 32)"><g class="output"><g class="clusters"></g><g class="edgePaths"><g class="edgePath" style="opacity: 1;"><path class="path" d="M413.20703125,70.15917474478854L283.796875,100L283.796875,125" marker-end="url(#arrowhead7743)" style="fill:none"></path><defs><marker id="arrowhead7743" viewBox="0 0 10 10" refX="9" refY="5" markerUnits="strokeWidth" markerWidth="8" markerHeight="6" orient="auto"><path d="M 0 0 L 10 5 L 0 10 z" class="arrowheadPath" style="stroke-width: 1; stroke-dasharray: 1, 0;"></path></marker></defs></g><g class="edgePath" style="opacity: 1;"><path class="path" d="M233.3720238095238,180L187.53125,205L187.53125,230" marker-end="url(#arrowhead7744)" style="fill:none"></path><defs><marker id="arrowhead7744" viewBox="0 0 10 10" refX="9" refY="5" markerUnits="strokeWidth" markerWidth="8" markerHeight="6" orient="auto"><path d="M 0 0 L 10 5 L 0 10 z" class="arrowheadPath" style="stroke-width: 1; stroke-dasharray: 1, 0;"></path></marker></defs></g><g class="edgePath" style="opacity: 1;"><path class="path" d="M364.0703125,174.38920223989612L476.328125,205L476.328125,230" marker-end="url(#arrowhead7745)" style="fill:none"></path><defs><marker id="arrowhead7745" viewBox="0 0 10 10" refX="9" refY="5" markerUnits="strokeWidth" markerWidth="8" markerHeight="6" orient="auto"><path d="M 0 0 L 10 5 L 0 10 z" class="arrowheadPath" style="stroke-width: 1; stroke-dasharray: 1, 0;"></path></marker></defs></g><g class="edgePath" style="opacity: 1;"><path class="path" d="M476.328125,285L476.328125,310L476.328125,335" marker-end="url(#arrowhead7746)" style="fill:none"></path><defs><marker id="arrowhead7746" viewBox="0 0 10 10" refX="9" refY="5" markerUnits="strokeWidth" markerWidth="8" markerHeight="6" orient="auto"><path d="M 0 0 L 10 5 L 0 10 z" class="arrowheadPath" style="stroke-width: 1; stroke-dasharray: 1, 0;"></path></marker></defs></g><g class="edgePath" style="opacity: 1;"><path class="path" d="M137.1063988095238,285L91.265625,310L91.265625,335" marker-end="url(#arrowhead7747)" style="fill:none"></path><defs><marker id="arrowhead7747" viewBox="0 0 10 10" refX="9" refY="5" markerUnits="strokeWidth" markerWidth="8" markerHeight="6" orient="auto"><path d="M 0 0 L 10 5 L 0 10 z" class="arrowheadPath" style="stroke-width: 1; stroke-dasharray: 1, 0;"></path></marker></defs></g><g class="edgePath" style="opacity: 1;"><path class="path" d="M237.9561011904762,285L283.796875,310L283.796875,335" marker-end="url(#arrowhead7748)" style="fill:none"></path><defs><marker id="arrowhead7748" viewBox="0 0 10 10" refX="9" refY="5" markerUnits="strokeWidth" markerWidth="8" markerHeight="6" orient="auto"><path d="M 0 0 L 10 5 L 0 10 z" class="arrowheadPath" style="stroke-width: 1; stroke-dasharray: 1, 0;"></path></marker></defs></g><g class="edgePath" style="opacity: 1;"><path class="path" d="M609.73828125,64.66720177821685L811.984375,100L811.984375,125" marker-end="url(#arrowhead7749)" style="fill:none"></path><defs><marker id="arrowhead7749" viewBox="0 0 10 10" refX="9" refY="5" markerUnits="strokeWidth" markerWidth="8" markerHeight="6" orient="auto"><path d="M 0 0 L 10 5 L 0 10 z" class="arrowheadPath" style="stroke-width: 1; stroke-dasharray: 1, 0;"></path></marker></defs></g><g class="edgePath" style="opacity: 1;"><path class="path" d="M811.984375,180L811.984375,205L811.984375,230" marker-end="url(#arrowhead7750)" style="fill:none"></path><defs><marker id="arrowhead7750" viewBox="0 0 10 10" refX="9" refY="5" markerUnits="strokeWidth" markerWidth="8" markerHeight="6" orient="auto"><path d="M 0 0 L 10 5 L 0 10 z" class="arrowheadPath" style="stroke-width: 1; stroke-dasharray: 1, 0;"></path></marker></defs></g><g class="edgePath" style="opacity: 1;"><path class="path" d="M749.2868303571429,285L692.2890625,310L692.2890625,335" marker-end="url(#arrowhead7751)" style="fill:none"></path><defs><marker id="arrowhead7751" viewBox="0 0 10 10" refX="9" refY="5" markerUnits="strokeWidth" markerWidth="8" markerHeight="6" orient="auto"><path d="M 0 0 L 10 5 L 0 10 z" class="arrowheadPath" style="stroke-width: 1; stroke-dasharray: 1, 0;"></path></marker></defs></g><g class="edgePath" style="opacity: 1;"><path class="path" d="M874.6819196428571,285L931.6796875,310L931.6796875,335" marker-end="url(#arrowhead7752)" style="fill:none"></path><defs><marker id="arrowhead7752" viewBox="0 0 10 10" refX="9" refY="5" markerUnits="strokeWidth" markerWidth="8" markerHeight="6" orient="auto"><path d="M 0 0 L 10 5 L 0 10 z" class="arrowheadPath" style="stroke-width: 1; stroke-dasharray: 1, 0;"></path></marker></defs></g></g><g class="edgeLabels"><g class="edgeLabel" transform="" style="opacity: 1;"><g transform="translate(0,0)" class="label"><foreignObject width="0" height="0"><div xmlns="http://www.w3.org/1999/xhtml" style="display: inline-block; white-space: nowrap;"><span class="edgeLabel"></span></div></foreignObject></g></g><g class="edgeLabel" transform="" style="opacity: 1;"><g transform="translate(0,0)" class="label"><foreignObject width="0" height="0"><div xmlns="http://www.w3.org/1999/xhtml" style="display: inline-block; white-space: nowrap;"><span class="edgeLabel"></span></div></foreignObject></g></g><g class="edgeLabel" transform="" style="opacity: 1;"><g transform="translate(0,0)" class="label"><foreignObject width="0" height="0"><div xmlns="http://www.w3.org/1999/xhtml" style="display: inline-block; white-space: nowrap;"><span class="edgeLabel"></span></div></foreignObject></g></g><g class="edgeLabel" transform="" style="opacity: 1;"><g transform="translate(0,0)" class="label"><foreignObject width="0" height="0"><div xmlns="http://www.w3.org/1999/xhtml" style="display: inline-block; white-space: nowrap;"><span class="edgeLabel"></span></div></foreignObject></g></g><g class="edgeLabel" transform="" style="opacity: 1;"><g transform="translate(0,0)" class="label"><foreignObject width="0" height="0"><div xmlns="http://www.w3.org/1999/xhtml" style="display: inline-block; white-space: nowrap;"><span class="edgeLabel"></span></div></foreignObject></g></g><g class="edgeLabel" transform="" style="opacity: 1;"><g transform="translate(0,0)" class="label"><foreignObject width="0" height="0"><div xmlns="http://www.w3.org/1999/xhtml" style="display: inline-block; white-space: nowrap;"><span class="edgeLabel"></span></div></foreignObject></g></g><g class="edgeLabel" transform="" style="opacity: 1;"><g transform="translate(0,0)" class="label"><foreignObject width="0" height="0"><div xmlns="http://www.w3.org/1999/xhtml" style="display: inline-block; white-space: nowrap;"><span class="edgeLabel"></span></div></foreignObject></g></g><g class="edgeLabel" transform="" style="opacity: 1;"><g transform="translate(0,0)" class="label"><foreignObject width="0" height="0"><div xmlns="http://www.w3.org/1999/xhtml" style="display: inline-block; white-space: nowrap;"><span class="edgeLabel"></span></div></foreignObject></g></g><g class="edgeLabel" transform="" style="opacity: 1;"><g transform="translate(0,0)" class="label"><foreignObject width="0" height="0"><div xmlns="http://www.w3.org/1999/xhtml" style="display: inline-block; white-space: nowrap;"><span class="edgeLabel"></span></div></foreignObject></g></g><g class="edgeLabel" transform="" style="opacity: 1;"><g transform="translate(0,0)" class="label"><foreignObject width="0" height="0"><div xmlns="http://www.w3.org/1999/xhtml" style="display: inline-block; white-space: nowrap;"><span class="edgeLabel"></span></div></foreignObject></g></g></g><g class="nodes"><g class="node" id="wonje" transform="translate(511.47265625,47.5)" style="opacity: 1;"><rect rx="0" ry="0" x="-98.265625" y="-27.5" width="196.53125" height="55"></rect><g class="label" transform="translate(0,0)"><g transform="translate(-88.265625,-17.5)"><foreignObject width="176.54296875" height="35"><div xmlns="http://www.w3.org/1999/xhtml" style="display: inline-block; white-space: nowrap;">1 원제元帝 사마예睿</div></foreignObject></g></g></g><g class="node" id="myeongje" transform="translate(283.796875,152.5)" style="opacity: 1;"><rect rx="0" ry="0" x="-80.2734375" y="-27.5" width="160.546875" height="55"></rect><g class="label" transform="translate(0,0)"><g transform="translate(-70.2734375,-17.5)"><foreignObject width="140.546875" height="35"><div xmlns="http://www.w3.org/1999/xhtml" style="display: inline-block; white-space: nowrap;">2 명제明帝 소紹</div></foreignObject></g></g></g><g class="node" id="seongje" transform="translate(187.53125,257.5)" style="opacity: 1;"><rect rx="0" ry="0" x="-71.265625" y="-27.5" width="142.53125" height="55"></rect><g class="label" transform="translate(0,0)"><g transform="translate(-61.265625,-17.5)"><foreignObject width="122.5390625" height="35"><div xmlns="http://www.w3.org/1999/xhtml" style="display: inline-block; white-space: nowrap;">3 성제成 연衍</div></foreignObject></g></g></g><g class="node" id="gangje" transform="translate(476.328125,257.5)" style="opacity: 1;"><rect rx="0" ry="0" x="-71.265625" y="-27.5" width="142.53125" height="55"></rect><g class="label" transform="translate(0,0)"><g transform="translate(-61.265625,-17.5)"><foreignObject width="122.5390625" height="35"><div xmlns="http://www.w3.org/1999/xhtml" style="display: inline-block; white-space: nowrap;">4 강제康 악岳</div></foreignObject></g></g></g><g class="node" id="mokje" transform="translate(476.328125,362.5)" style="opacity: 1;"><rect rx="0" ry="0" x="-71.265625" y="-27.5" width="142.53125" height="55"></rect><g class="label" transform="translate(0,0)"><g transform="translate(-61.265625,-17.5)"><foreignObject width="122.5390625" height="35"><div xmlns="http://www.w3.org/1999/xhtml" style="display: inline-block; white-space: nowrap;">5 목제穆 담聃</div></foreignObject></g></g></g><g class="node" id="aeje" transform="translate(91.265625,362.5)" style="opacity: 1;"><rect rx="0" ry="0" x="-71.265625" y="-27.5" width="142.53125" height="55"></rect><g class="label" transform="translate(0,0)"><g transform="translate(-61.265625,-17.5)"><foreignObject width="122.5390625" height="35"><div xmlns="http://www.w3.org/1999/xhtml" style="display: inline-block; white-space: nowrap;">6 애제哀 비丕</div></foreignObject></g></g></g><g class="node" id="pyeje" transform="translate(283.796875,362.5)" style="opacity: 1;"><rect rx="0" ry="0" x="-71.265625" y="-27.5" width="142.53125" height="55"></rect><g class="label" transform="translate(0,0)"><g transform="translate(-61.265625,-17.5)"><foreignObject width="122.5390625" height="35"><div xmlns="http://www.w3.org/1999/xhtml" style="display: inline-block; white-space: nowrap;">7 폐제廢 혁奕</div></foreignObject></g></g></g><g class="node" id="ganmunje" transform="translate(811.984375,152.5)" style="opacity: 1;"><rect rx="0" ry="0" x="-89.2734375" y="-27.5" width="178.546875" height="55"></rect><g class="label" transform="translate(0,0)"><g transform="translate(-79.2734375,-17.5)"><foreignObject width="158.5546875" height="35"><div xmlns="http://www.w3.org/1999/xhtml" style="display: inline-block; white-space: nowrap;">8 간문제簡文 욱昱</div></foreignObject></g></g></g><g class="node" id="hyomuje" transform="translate(811.984375,257.5)" style="opacity: 1;"><rect rx="0" ry="0" x="-89.2734375" y="-27.5" width="178.546875" height="55"></rect><g class="label" transform="translate(0,0)"><g transform="translate(-79.2734375,-17.5)"><foreignObject width="158.5546875" height="35"><div xmlns="http://www.w3.org/1999/xhtml" style="display: inline-block; white-space: nowrap;">9 효무제孝武 요曜</div></foreignObject></g></g></g><g class="node" id="anje" transform="translate(692.2890625,362.5)" style="opacity: 1;"><rect rx="0" ry="0" x="-94.6953125" y="-27.5" width="189.390625" height="55"></rect><g class="label" transform="translate(0,0)"><g transform="translate(-84.6953125,-17.5)"><foreignObject width="169.39453125" height="35"><div xmlns="http://www.w3.org/1999/xhtml" style="display: inline-block; white-space: nowrap;">10 안제安 덕종德宗</div></foreignObject></g></g></g><g class="node" id="gongje" transform="translate(931.6796875,362.5)" style="opacity: 1;"><rect rx="0" ry="0" x="-94.6953125" y="-27.5" width="189.390625" height="55"></rect><g class="label" transform="translate(0,0)"><g transform="translate(-84.6953125,-17.5)"><foreignObject width="169.39453125" height="35"><div xmlns="http://www.w3.org/1999/xhtml" style="display: inline-block; white-space: nowrap;">11 공제恭 덕문德文</div></foreignObject></g></g></g></g></g></g></svg></div><div class="md-diagram-panel"><svg id="mermaidChart966" width="100%" xmlns="http://www.w3.org/2000/svg" height="100%" viewBox="0 0 1138 580"><style></style><style>#mermaidChart966 {
-    color: rgb(51, 51, 51);
-    font: normal normal 400 normal 14.4px / 23.04px "Lucida Console", Consolas, Courier, monospace;
-  }</style><g></g><g class="grid" transform="translate(0, 530)" fill="none" font-size="10" font-family="sans-serif" text-anchor="middle"><path class="domain" stroke="#000" d="M0.5,-495V0.5H1138.5V-495"></path><g class="tick" opacity="1" transform="translate(33.5,0)"><line stroke="#000" y2="-495"></line><text fill="#000" y="3" dy="1em" stroke="none" font-size="10" style="text-anchor: middle;">0320-01-01</text></g><g class="tick" opacity="1" transform="translate(144.5,0)"><line stroke="#000" y2="-495"></line><text fill="#000" y="3" dy="1em" stroke="none" font-size="10" style="text-anchor: middle;">0330-01-01</text></g><g class="tick" opacity="1" transform="translate(254.5,0)"><line stroke="#000" y2="-495"></line><text fill="#000" y="3" dy="1em" stroke="none" font-size="10" style="text-anchor: middle;">0340-01-01</text></g><g class="tick" opacity="1" transform="translate(365.5,0)"><line stroke="#000" y2="-495"></line><text fill="#000" y="3" dy="1em" stroke="none" font-size="10" style="text-anchor: middle;">0350-01-01</text></g><g class="tick" opacity="1" transform="translate(475.5,0)"><line stroke="#000" y2="-495"></line><text fill="#000" y="3" dy="1em" stroke="none" font-size="10" style="text-anchor: middle;">0360-01-01</text></g><g class="tick" opacity="1" transform="translate(586.5,0)"><line stroke="#000" y2="-495"></line><text fill="#000" y="3" dy="1em" stroke="none" font-size="10" style="text-anchor: middle;">0370-01-01</text></g><g class="tick" opacity="1" transform="translate(696.5,0)"><line stroke="#000" y2="-495"></line><text fill="#000" y="3" dy="1em" stroke="none" font-size="10" style="text-anchor: middle;">0380-01-01</text></g><g class="tick" opacity="1" transform="translate(807.5,0)"><line stroke="#000" y2="-495"></line><text fill="#000" y="3" dy="1em" stroke="none" font-size="10" style="text-anchor: middle;">0390-01-01</text></g><g class="tick" opacity="1" transform="translate(917.5,0)"><line stroke="#000" y2="-495"></line><text fill="#000" y="3" dy="1em" stroke="none" font-size="10" style="text-anchor: middle;">0400-01-01</text></g><g class="tick" opacity="1" transform="translate(1028.5,0)"><line stroke="#000" y2="-495"></line><text fill="#000" y="3" dy="1em" stroke="none" font-size="10" style="text-anchor: middle;">0410-01-01</text></g><g class="tick" opacity="1" transform="translate(1138.5,0)"><line stroke="#000" y2="-495"></line><text fill="#000" y="3" dy="1em" stroke="none" font-size="10" style="text-anchor: middle;">0420-01-01</text></g></g><g><rect x="0" y="48" width="1138" height="24" class="section section0"></rect><rect x="0" y="72" width="1138" height="24" class="section section0"></rect><rect x="0" y="96" width="1138" height="24" class="section section0"></rect><rect x="0" y="120" width="1138" height="24" class="section section0"></rect><rect x="0" y="144" width="1138" height="24" class="section section0"></rect><rect x="0" y="168" width="1138" height="24" class="section section0"></rect><rect x="0" y="192" width="1138" height="24" class="section section0"></rect><rect x="0" y="216" width="1138" height="24" class="section section0"></rect><rect x="0" y="240" width="1138" height="24" class="section section0"></rect><rect x="0" y="264" width="1138" height="24" class="section section0"></rect><rect x="0" y="288" width="1138" height="24" class="section section0"></rect><rect x="0" y="312" width="1138" height="24" class="section section1"></rect><rect x="0" y="336" width="1138" height="24" class="section section1"></rect><rect x="0" y="360" width="1138" height="24" class="section section1"></rect><rect x="0" y="384" width="1138" height="24" class="section section1"></rect><rect x="0" y="408" width="1138" height="24" class="section section1"></rect><rect x="0" y="432" width="1138" height="24" class="section section1"></rect><rect x="0" y="456" width="1138" height="24" class="section section2"></rect><rect x="0" y="480" width="1138" height="24" class="section section2"></rect><rect x="0" y="504" width="1138" height="24" class="section section2"></rect></g><g><rect rx="3" ry="3" x="0" y="50" width="55" height="20" class="task  task0"></rect><rect rx="3" ry="3" x="66" y="74" width="22" height="20" class="task  task0"></rect><rect rx="3" ry="3" x="99" y="98" width="177" height="20" class="task  task0"></rect><rect rx="3" ry="3" x="287" y="122" width="11" height="20" class="task  task0"></rect><rect rx="3" ry="3" x="309" y="146" width="177" height="20" class="task  task0"></rect><rect rx="3" ry="3" x="497" y="170" width="33" height="20" class="task  task0"></rect><rect rx="3" ry="3" x="541" y="194" width="45" height="20" class="task  task0"></rect><rect rx="3" ry="3" x="597" y="218" width="11" height="20" class="task  task0"></rect><rect rx="3" ry="3" x="619" y="242" width="254" height="20" class="task  task0"></rect><rect rx="3" ry="3" x="884" y="266" width="232" height="20" class="task  task0"></rect><rect rx="3" ry="3" x="1127" y="290" width="11" height="20" class="task  task0"></rect><rect rx="3" ry="3" x="376" y="314" width="33" height="20" class="task  task1"></rect><rect rx="3" ry="3" x="420" y="338" width="11" height="20" class="task  task1"></rect><rect rx="3" ry="3" x="442" y="362" width="298" height="20" class="task  task1"></rect><rect rx="3" ry="3" x="751" y="386" width="11" height="20" class="task  task1"></rect><rect rx="3" ry="3" x="762" y="410" width="78" height="20" class="task  task1"></rect><rect rx="3" ry="3" x="851" y="434" width="11" height="20" class="task  task1"></rect><rect rx="3" ry="3" x="740" y="458" width="100" height="20" class="task  task2"></rect><rect rx="3" ry="3" x="851" y="482" width="232" height="20" class="task  task2"></rect><rect rx="3" ry="3" x="1094" y="506" width="11" height="20" class="task  task2"></rect><text font-size="11" x="27.5" y="63.5" text-height="20" class="taskText taskText0 ">원제元帝      </text><text font-size="11" x="93" y="87.5" text-height="20" class="taskTextOutsideRight taskTextOutside0 ">명제明帝        </text><text font-size="11" x="187.5" y="111.5" text-height="20" class="taskText taskText0 ">성제成        </text><text font-size="11" x="303" y="135.5" text-height="20" class="taskTextOutsideRight taskTextOutside0 ">강제康        </text><text font-size="11" x="397.5" y="159.5" text-height="20" class="taskText taskText0 ">목제穆        </text><text font-size="11" x="535" y="183.5" text-height="20" class="taskTextOutsideRight taskTextOutside0 ">애제哀        </text><text font-size="11" x="563.5" y="207.5" text-height="20" class="taskText taskText0 ">폐제廢        </text><text font-size="11" x="613" y="231.5" text-height="20" class="taskTextOutsideRight taskTextOutside0 ">간문제簡文        </text><text font-size="11" x="746" y="255.5" text-height="20" class="taskText taskText0 ">효무제孝武        </text><text font-size="11" x="1000" y="279.5" text-height="20" class="taskText taskText0 ">안제安        </text><text font-size="11" x="1122" y="303.5" text-height="20" class="taskTextOutsideLeft taskTextOutside0 ">공제恭        </text><text font-size="11" x="414" y="327.5" text-height="20" class="taskTextOutsideRight taskTextOutside1 ">고조 부건符健 </text><text font-size="11" x="436" y="351.5" text-height="20" class="taskTextOutsideRight taskTextOutside1 ">폐제廢 부생生 </text><text font-size="11" x="591" y="375.5" text-height="20" class="taskText taskText1 ">세조世祖 부견堅 </text><text font-size="11" x="767" y="399.5" text-height="20" class="taskTextOutsideRight taskTextOutside1 ">애평제哀平 비丕 </text><text font-size="11" x="801" y="423.5" text-height="20" class="taskText taskText1 ">태종太 등登 </text><text font-size="11" x="867" y="447.5" text-height="20" class="taskTextOutsideRight taskTextOutside1 ">말주末主 숭崇 </text><text font-size="11" x="790" y="471.5" text-height="20" class="taskText taskText2 ">태조 요장姚萇 </text><text font-size="11" x="967" y="495.5" text-height="20" class="taskText taskText2 ">고조 요흥興 </text><text font-size="11" x="1089" y="519.5" text-height="20" class="taskTextOutsideLeft taskTextOutside2 ">후주后主 요홍泓 </text></g><g><text x="10" y="182" class="sectionTitle sectionTitle0">동진東晉</text><text x="10" y="386" class="sectionTitle sectionTitle1">전진前秦</text><text x="10" y="494" class="sectionTitle sectionTitle2">후진後秦</text></g><g class="today"><line x1="18806" x2="18806" y1="25" y2="555" class="today"></line></g><text x="569" y="25" class="titleText">남북조</text></svg></div><div class="md-diagram-panel"><svg id="mermaidChart1706" width="100%" xmlns="http://www.w3.org/2000/svg" height="100%" viewBox="0 0 1138 916"><style></style><style>#mermaidChart1706 {
-    color: rgb(51, 51, 51);
-    font: normal normal 400 normal 14.4px / 23.04px "Lucida Console", Consolas, Courier, monospace;
-  }</style><g></g><g class="grid" transform="translate(0, 866)" fill="none" font-size="10" font-family="sans-serif" text-anchor="middle"><path class="domain" stroke="#000" d="M0.5,-831V0.5H1138.5V-831"></path><g class="tick" opacity="1" transform="translate(93.5,0)"><line stroke="#000" y2="-831"></line><text fill="#000" y="3" dy="1em" stroke="none" font-size="10" style="text-anchor: middle;">0400-01-01</text></g><g class="tick" opacity="1" transform="translate(226.5,0)"><line stroke="#000" y2="-831"></line><text fill="#000" y="3" dy="1em" stroke="none" font-size="10" style="text-anchor: middle;">0420-01-01</text></g><g class="tick" opacity="1" transform="translate(359.5,0)"><line stroke="#000" y2="-831"></line><text fill="#000" y="3" dy="1em" stroke="none" font-size="10" style="text-anchor: middle;">0440-01-01</text></g><g class="tick" opacity="1" transform="translate(492.5,0)"><line stroke="#000" y2="-831"></line><text fill="#000" y="3" dy="1em" stroke="none" font-size="10" style="text-anchor: middle;">0460-01-01</text></g><g class="tick" opacity="1" transform="translate(626.5,0)"><line stroke="#000" y2="-831"></line><text fill="#000" y="3" dy="1em" stroke="none" font-size="10" style="text-anchor: middle;">0480-01-01</text></g><g class="tick" opacity="1" transform="translate(759.5,0)"><line stroke="#000" y2="-831"></line><text fill="#000" y="3" dy="1em" stroke="none" font-size="10" style="text-anchor: middle;">0500-01-01</text></g><g class="tick" opacity="1" transform="translate(892.5,0)"><line stroke="#000" y2="-831"></line><text fill="#000" y="3" dy="1em" stroke="none" font-size="10" style="text-anchor: middle;">0520-01-01</text></g><g class="tick" opacity="1" transform="translate(1025.5,0)"><line stroke="#000" y2="-831"></line><text fill="#000" y="3" dy="1em" stroke="none" font-size="10" style="text-anchor: middle;">0540-01-01</text></g></g><g><rect x="0" y="48" width="1138" height="24" class="section section0"></rect><rect x="0" y="72" width="1138" height="24" class="section section0"></rect><rect x="0" y="96" width="1138" height="24" class="section section0"></rect><rect x="0" y="120" width="1138" height="24" class="section section0"></rect><rect x="0" y="144" width="1138" height="24" class="section section0"></rect><rect x="0" y="168" width="1138" height="24" class="section section0"></rect><rect x="0" y="192" width="1138" height="24" class="section section0"></rect><rect x="0" y="216" width="1138" height="24" class="section section0"></rect><rect x="0" y="240" width="1138" height="24" class="section section0"></rect><rect x="0" y="264" width="1138" height="24" class="section section0"></rect><rect x="0" y="288" width="1138" height="24" class="section section0"></rect><rect x="0" y="312" width="1138" height="24" class="section section1"></rect><rect x="0" y="336" width="1138" height="24" class="section section1"></rect><rect x="0" y="360" width="1138" height="24" class="section section1"></rect><rect x="0" y="384" width="1138" height="24" class="section section2"></rect><rect x="0" y="408" width="1138" height="24" class="section section3"></rect><rect x="0" y="432" width="1138" height="24" class="section section3"></rect><rect x="0" y="456" width="1138" height="24" class="section section3"></rect><rect x="0" y="480" width="1138" height="24" class="section section3"></rect><rect x="0" y="504" width="1138" height="24" class="section section3"></rect><rect x="0" y="528" width="1138" height="24" class="section section3"></rect><rect x="0" y="552" width="1138" height="24" class="section section3"></rect><rect x="0" y="576" width="1138" height="24" class="section section3"></rect><rect x="0" y="600" width="1138" height="24" class="section section0"></rect><rect x="0" y="624" width="1138" height="24" class="section section0"></rect><rect x="0" y="648" width="1138" height="24" class="section section0"></rect><rect x="0" y="672" width="1138" height="24" class="section section0"></rect><rect x="0" y="696" width="1138" height="24" class="section section0"></rect><rect x="0" y="720" width="1138" height="24" class="section section0"></rect><rect x="0" y="744" width="1138" height="24" class="section section0"></rect><rect x="0" y="768" width="1138" height="24" class="section section1"></rect><rect x="0" y="792" width="1138" height="24" class="section section1"></rect><rect x="0" y="816" width="1138" height="24" class="section section1"></rect><rect x="0" y="840" width="1138" height="24" class="section section1"></rect></g><g><rect rx="3" ry="3" x="0" y="50" width="146" height="20" class="task  task0"></rect><rect rx="3" ry="3" x="153" y="74" width="93" height="20" class="task  task0"></rect><rect rx="3" ry="3" x="253" y="98" width="186" height="20" class="task  task0"></rect><rect rx="3" ry="3" x="439" y="122" width="87" height="20" class="task  task0"></rect><rect rx="3" ry="3" x="532" y="146" width="27" height="20" class="task  task0"></rect><rect rx="3" ry="3" x="566" y="170" width="186" height="20" class="task  task0"></rect><rect rx="3" ry="3" x="759" y="194" width="99" height="20" class="task  task0"></rect><rect rx="3" ry="3" x="865" y="218" width="80" height="20" class="task  task0"></rect><rect rx="3" ry="3" x="945" y="242" width="13" height="20" class="task  task0"></rect><rect rx="3" ry="3" x="965" y="266" width="7" height="20" class="task  task0"></rect><rect rx="3" ry="3" x="965" y="290" width="20" height="20" class="task  task0"></rect><rect rx="3" ry="3" x="992" y="314" width="106" height="20" class="task  task1"></rect><rect rx="3" ry="3" x="1105" y="338" width="6" height="20" class="task  task1"></rect><rect rx="3" ry="3" x="1118" y="362" width="13" height="20" class="task  task1"></rect><rect rx="3" ry="3" x="985" y="386" width="106" height="20" class="task  task2"></rect><rect rx="3" ry="3" x="226" y="410" width="14" height="20" class="task  task3"></rect><rect rx="3" ry="3" x="246" y="434" width="7" height="20" class="task  task3"></rect><rect rx="3" ry="3" x="253" y="458" width="193" height="20" class="task  task3"></rect><rect rx="3" ry="3" x="453" y="482" width="66" height="20" class="task  task3"></rect><rect rx="3" ry="3" x="519" y="506" width="7" height="20" class="task  task3"></rect><rect rx="3" ry="3" x="526" y="530" width="46" height="20" class="task  task3"></rect><rect rx="3" ry="3" x="579" y="554" width="20" height="20" class="task  task3"></rect><rect rx="3" ry="3" x="606" y="578" width="13" height="20" class="task  task3"></rect><rect rx="3" ry="3" x="619" y="602" width="20" height="20" class="task  task0"></rect><rect rx="3" ry="3" x="646" y="626" width="66" height="20" class="task  task0"></rect><rect rx="3" ry="3" x="719" y="650" width="0" height="20" class="task  task0"></rect><rect rx="3" ry="3" x="719" y="674" width="0" height="20" class="task  task0"></rect><rect rx="3" ry="3" x="719" y="698" width="26" height="20" class="task  task0"></rect><rect rx="3" ry="3" x="752" y="722" width="7" height="20" class="task  task0"></rect><rect rx="3" ry="3" x="765" y="746" width="7" height="20" class="task  task0"></rect><rect rx="3" ry="3" x="772" y="770" width="313" height="20" class="task  task1"></rect><rect rx="3" ry="3" x="1091" y="794" width="7" height="20" class="task  task1"></rect><rect rx="3" ry="3" x="1105" y="818" width="13" height="20" class="task  task1"></rect><rect rx="3" ry="3" x="1125" y="842" width="13" height="20" class="task  task1"></rect><text font-size="11" x="73" y="63.5" text-height="20" class="taskText taskText0 ">도무제 탁발규拓跋珪 </text><text font-size="11" x="199.5" y="87.5" text-height="20" class="taskText taskText0 ">명원제 사 </text><text font-size="11" x="346" y="111.5" text-height="20" class="taskText taskText0 ">태무제 도 </text><text font-size="11" x="482.5" y="135.5" text-height="20" class="taskText taskText0 ">문성제 준 </text><text font-size="11" x="564" y="159.5" text-height="20" class="taskTextOutsideRight taskTextOutside0 ">헌문제 홍 </text><text font-size="11" x="659" y="183.5" text-height="20" class="taskText taskText0 ">효문제 원굉 </text><text font-size="11" x="808.5" y="207.5" text-height="20" class="taskText taskText0 ">선무제 원각 </text><text font-size="11" x="905" y="231.5" text-height="20" class="taskText taskText0 ">효명제 후 </text><text font-size="11" x="963" y="255.5" text-height="20" class="taskTextOutsideRight taskTextOutside0 ">효장제 자유 </text><text font-size="11" x="977" y="279.5" text-height="20" class="taskTextOutsideRight taskTextOutside0 ">절민제 공 </text><text font-size="11" x="990" y="303.5" text-height="20" class="taskTextOutsideRight taskTextOutside0 ">폐제 랑 </text><text font-size="11" x="1045" y="327.5" text-height="20" class="taskText taskText1 ">효문제 보거 </text><text font-size="11" x="1100" y="351.5" text-height="20" class="taskTextOutsideLeft taskTextOutside1 ">폐제 흠 </text><text font-size="11" x="1113" y="375.5" text-height="20" class="taskTextOutsideLeft taskTextOutside1 ">공제 확 </text><text font-size="11" x="1038" y="399.5" text-height="20" class="taskText taskText2 ">효정제 선견 </text><text font-size="11" x="245" y="423.5" text-height="20" class="taskTextOutsideRight taskTextOutside3 ">무제武 유유劉裕 </text><text font-size="11" x="258" y="447.5" text-height="20" class="taskTextOutsideRight taskTextOutside3 ">소제少 의부義符 </text><text font-size="11" x="349.5" y="471.5" text-height="20" class="taskText taskText3 ">문제文 의륭義隆 </text><text font-size="11" x="524" y="495.5" text-height="20" class="taskTextOutsideRight taskTextOutside3 ">효무孝武 준駿 </text><text font-size="11" x="531" y="519.5" text-height="20" class="taskTextOutsideRight taskTextOutside3 ">전폐제 前廢 자업子業 </text><text font-size="11" x="577" y="543.5" text-height="20" class="taskTextOutsideRight taskTextOutside3 ">명제明 욱彧 </text><text font-size="11" x="604" y="567.5" text-height="20" class="taskTextOutsideRight taskTextOutside3 ">후폐제后廢 욱昱 </text><text font-size="11" x="624" y="591.5" text-height="20" class="taskTextOutsideRight taskTextOutside3 ">순제順 준準 </text><text font-size="11" x="644" y="615.5" text-height="20" class="taskTextOutsideRight taskTextOutside0 ">고제高 소도성蕭道成 </text><text font-size="11" x="679" y="639.5" text-height="20" class="taskText taskText0 ">무제武 색賾 </text><text font-size="11" x="724" y="663.5" text-height="20" class="taskTextOutsideRight taskTextOutside0 ">욱림왕郁林 소업昭業 </text><text font-size="11" x="724" y="687.5" text-height="20" class="taskTextOutsideRight taskTextOutside0 ">해릉왕海陵 소문昭文 </text><text font-size="11" x="750" y="711.5" text-height="20" class="taskTextOutsideRight taskTextOutside0 ">명제明 란鸞 </text><text font-size="11" x="764" y="735.5" text-height="20" class="taskTextOutsideRight taskTextOutside0 ">동혼후東昏侯 보권寶券 </text><text font-size="11" x="777" y="759.5" text-height="20" class="taskTextOutsideRight taskTextOutside0 ">화제和 보융寶融 </text><text font-size="11" x="928.5" y="783.5" text-height="20" class="taskText taskText1 ">무제 소연 </text><text font-size="11" x="1086" y="807.5" text-height="20" class="taskTextOutsideLeft taskTextOutside1 ">간문제 강 </text><text font-size="11" x="1100" y="831.5" text-height="20" class="taskTextOutsideLeft taskTextOutside1 ">원제 역 </text><text font-size="11" x="1120" y="855.5" text-height="20" class="taskTextOutsideLeft taskTextOutside1 ">경제 방지 </text></g><g><text x="10" y="182" class="sectionTitle sectionTitle0">북위北魏</text><text x="10" y="350" class="sectionTitle sectionTitle1">서위西魏</text><text x="10" y="398" class="sectionTitle sectionTitle2">동위東魏</text><text x="10" y="506" class="sectionTitle sectionTitle3">송宋</text><text x="10" y="686" class="sectionTitle sectionTitle0">제濟</text><text x="10" y="818" class="sectionTitle sectionTitle1">양梁</text></g><g class="today"><line x1="10868" x2="10868" y1="25" y2="891" class="today"></line></g><text x="569" y="25" class="titleText">남북조 북위/송제</text></svg></div><p>&nbsp;</p></div>
+<body class='typora-export os-windows'>
+<div id='write'  class=''><div class="md-diagram-panel"><svg id="mermaidChart0" width="100%" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" height="346" style="max-width: 886.938px; height: 386px;" viewBox="0 0 886.9375 346" class="md-require-zoom-fix"><style>#mermaidChart0{font-family:"trebuchet ms",verdana,arial,sans-serif;font-size:16px;fill:#333333;}#mermaidChart0 .error-icon{fill:hsl(60,100%,100%);}#mermaidChart0 .error-text{fill:rgb(0,0,0);stroke:rgb(0,0,0);}#mermaidChart0 .edge-thickness-normal{stroke-width:2px;}#mermaidChart0 .edge-thickness-thick{stroke-width:3.5px;}#mermaidChart0 .edge-pattern-solid{stroke-dasharray:0;}#mermaidChart0 .edge-pattern-dashed{stroke-dasharray:3;}#mermaidChart0 .edge-pattern-dotted{stroke-dasharray:2;}#mermaidChart0 .marker{fill:#000000;}#mermaidChart0 .marker.cross{stroke:#000000;}#mermaidChart0 svg{font-family:"trebuchet ms",verdana,arial,sans-serif;font-size:16px;}#mermaidChart0 .label{font-family:"trebuchet ms",verdana,arial,sans-serif;color:#333;}#mermaidChart0 .label text{fill:#333;}#mermaidChart0 .node rect,#mermaidChart0 .node circle,#mermaidChart0 .node ellipse,#mermaidChart0 .node polygon,#mermaidChart0 .node path{fill:#ECECFF;stroke:hsl(240,60%,86.2745098039%);stroke-width:1px;}#mermaidChart0 .node .label{text-align:center;}#mermaidChart0 .node.clickable{cursor:pointer;}#mermaidChart0 .arrowheadPath{fill:undefined;}#mermaidChart0 .edgePath .path{stroke:#000000;stroke-width:1.5px;}#mermaidChart0 .flowchart-link{stroke:#000000;fill:none;}#mermaidChart0 .edgeLabel{background-color:#f4f4f4;text-align:center;}#mermaidChart0 .edgeLabel rect{opacity:0.5;background-color:#f4f4f4;fill:#f4f4f4;}#mermaidChart0 .cluster rect{fill:hsl(60,100%,100%);stroke:hsl(60,60%,90%);stroke-width:1px;}#mermaidChart0 .cluster text{fill:rgb(0,0,0);}#mermaidChart0 div.mermaidTooltip{position:absolute;text-align:center;max-width:200px;padding:2px;font-family:"trebuchet ms",verdana,arial,sans-serif;font-size:12px;background:hsl(60,100%,100%);border:1px solid undefined;border-radius:2px;pointer-events:none;z-index:100;}#mermaidChart0:root{--mermaid-font-family:sans-serif;}#mermaidChart0:root{--mermaid-alt-font-family:sans-serif;}#mermaidChart0 flowchart{fill:apa;}</style><g><g class="output"><g class="clusters"></g><g class="edgePaths"><g class="edgePath LS-wonje LE-myeongje" id="L-wonje-myeongje" style="opacity: 1;"><path class="path" d="M350.35546875,50.382807114297535L235.046875,78L235.046875,103" marker-end="url(#arrowhead24)" style="fill:none"></path><defs><marker id="arrowhead24" viewBox="0 0 10 10" refX="9" refY="5" markerUnits="strokeWidth" markerWidth="8" markerHeight="6" orient="auto"><path d="M 0 0 L 10 5 L 0 10 z" class="arrowheadPath" style="stroke-width: 1; stroke-dasharray: 1, 0;"></path></marker></defs></g><g class="edgePath LS-myeongje LE-seongje" id="L-myeongje-seongje" style="opacity: 1;"><path class="path" d="M195.25,148L151.03125,173L151.03125,198" marker-end="url(#arrowhead25)" style="fill:none"></path><defs><marker id="arrowhead25" viewBox="0 0 10 10" refX="9" refY="5" markerUnits="strokeWidth" markerWidth="8" markerHeight="6" orient="auto"><path d="M 0 0 L 10 5 L 0 10 z" class="arrowheadPath" style="stroke-width: 1; stroke-dasharray: 1, 0;"></path></marker></defs></g><g class="edgePath LS-myeongje LE-gangje" id="L-myeongje-gangje" style="opacity: 1;"><path class="path" d="M302.0625,144.44434628975264L403.078125,173L403.078125,198" marker-end="url(#arrowhead26)" style="fill:none"></path><defs><marker id="arrowhead26" viewBox="0 0 10 10" refX="9" refY="5" markerUnits="strokeWidth" markerWidth="8" markerHeight="6" orient="auto"><path d="M 0 0 L 10 5 L 0 10 z" class="arrowheadPath" style="stroke-width: 1; stroke-dasharray: 1, 0;"></path></marker></defs></g><g class="edgePath LS-gangje LE-mokje" id="L-gangje-mokje" style="opacity: 1;"><path class="path" d="M403.078125,243L403.078125,268L403.078125,293" marker-end="url(#arrowhead27)" style="fill:none"></path><defs><marker id="arrowhead27" viewBox="0 0 10 10" refX="9" refY="5" markerUnits="strokeWidth" markerWidth="8" markerHeight="6" orient="auto"><path d="M 0 0 L 10 5 L 0 10 z" class="arrowheadPath" style="stroke-width: 1; stroke-dasharray: 1, 0;"></path></marker></defs></g><g class="edgePath LS-seongje LE-aeje" id="L-seongje-aeje" style="opacity: 1;"><path class="path" d="M111.234375,243L67.015625,268L67.015625,293" marker-end="url(#arrowhead28)" style="fill:none"></path><defs><marker id="arrowhead28" viewBox="0 0 10 10" refX="9" refY="5" markerUnits="strokeWidth" markerWidth="8" markerHeight="6" orient="auto"><path d="M 0 0 L 10 5 L 0 10 z" class="arrowheadPath" style="stroke-width: 1; stroke-dasharray: 1, 0;"></path></marker></defs></g><g class="edgePath LS-seongje LE-pyeje" id="L-seongje-pyeje" style="opacity: 1;"><path class="path" d="M190.828125,243L235.046875,268L235.046875,293" marker-end="url(#arrowhead29)" style="fill:none"></path><defs><marker id="arrowhead29" viewBox="0 0 10 10" refX="9" refY="5" markerUnits="strokeWidth" markerWidth="8" markerHeight="6" orient="auto"><path d="M 0 0 L 10 5 L 0 10 z" class="arrowheadPath" style="stroke-width: 1; stroke-dasharray: 1, 0;"></path></marker></defs></g><g class="edgePath LS-wonje LE-ganmunje" id="L-wonje-ganmunje" style="opacity: 1;"><path class="path" d="M516.38671875,45.54224470637321L695.515625,78L695.515625,103" marker-end="url(#arrowhead30)" style="fill:none"></path><defs><marker id="arrowhead30" viewBox="0 0 10 10" refX="9" refY="5" markerUnits="strokeWidth" markerWidth="8" markerHeight="6" orient="auto"><path d="M 0 0 L 10 5 L 0 10 z" class="arrowheadPath" style="stroke-width: 1; stroke-dasharray: 1, 0;"></path></marker></defs></g><g class="edgePath LS-ganmunje LE-hyomuje" id="L-ganmunje-hyomuje" style="opacity: 1;"><path class="path" d="M695.515625,148L695.515625,173L695.515625,198" marker-end="url(#arrowhead31)" style="fill:none"></path><defs><marker id="arrowhead31" viewBox="0 0 10 10" refX="9" refY="5" markerUnits="strokeWidth" markerWidth="8" markerHeight="6" orient="auto"><path d="M 0 0 L 10 5 L 0 10 z" class="arrowheadPath" style="stroke-width: 1; stroke-dasharray: 1, 0;"></path></marker></defs></g><g class="edgePath LS-hyomuje LE-anje" id="L-hyomuje-anje" style="opacity: 1;"><path class="path" d="M646.1525493421052,243L591.3046875,268L591.3046875,293" marker-end="url(#arrowhead32)" style="fill:none"></path><defs><marker id="arrowhead32" viewBox="0 0 10 10" refX="9" refY="5" markerUnits="strokeWidth" markerWidth="8" markerHeight="6" orient="auto"><path d="M 0 0 L 10 5 L 0 10 z" class="arrowheadPath" style="stroke-width: 1; stroke-dasharray: 1, 0;"></path></marker></defs></g><g class="edgePath LS-hyomuje LE-gongje" id="L-hyomuje-gongje" style="opacity: 1;"><path class="path" d="M744.8787006578948,243L799.7265625,268L799.7265625,293" marker-end="url(#arrowhead33)" style="fill:none"></path><defs><marker id="arrowhead33" viewBox="0 0 10 10" refX="9" refY="5" markerUnits="strokeWidth" markerWidth="8" markerHeight="6" orient="auto"><path d="M 0 0 L 10 5 L 0 10 z" class="arrowheadPath" style="stroke-width: 1; stroke-dasharray: 1, 0;"></path></marker></defs></g></g><g class="edgeLabels"><g class="edgeLabel" transform="" style="opacity: 1;"><g transform="translate(0,0)" class="label"><rect rx="0" ry="0" width="0" height="0"></rect><foreignObject width="0" height="0"><div xmlns="http://www.w3.org/1999/xhtml" style="display: inline-block; white-space: nowrap;"><span></span></div></foreignObject></g></g><g class="edgeLabel" transform="" style="opacity: 1;"><g transform="translate(0,0)" class="label"><rect rx="0" ry="0" width="0" height="0"></rect><foreignObject width="0" height="0"><div xmlns="http://www.w3.org/1999/xhtml" style="display: inline-block; white-space: nowrap;"><span></span></div></foreignObject></g></g><g class="edgeLabel" transform="" style="opacity: 1;"><g transform="translate(0,0)" class="label"><rect rx="0" ry="0" width="0" height="0"></rect><foreignObject width="0" height="0"><div xmlns="http://www.w3.org/1999/xhtml" style="display: inline-block; white-space: nowrap;"><span></span></div></foreignObject></g></g><g class="edgeLabel" transform="" style="opacity: 1;"><g transform="translate(0,0)" class="label"><rect rx="0" ry="0" width="0" height="0"></rect><foreignObject width="0" height="0"><div xmlns="http://www.w3.org/1999/xhtml" style="display: inline-block; white-space: nowrap;"><span></span></div></foreignObject></g></g><g class="edgeLabel" transform="" style="opacity: 1;"><g transform="translate(0,0)" class="label"><rect rx="0" ry="0" width="0" height="0"></rect><foreignObject width="0" height="0"><div xmlns="http://www.w3.org/1999/xhtml" style="display: inline-block; white-space: nowrap;"><span></span></div></foreignObject></g></g><g class="edgeLabel" transform="" style="opacity: 1;"><g transform="translate(0,0)" class="label"><rect rx="0" ry="0" width="0" height="0"></rect><foreignObject width="0" height="0"><div xmlns="http://www.w3.org/1999/xhtml" style="display: inline-block; white-space: nowrap;"><span></span></div></foreignObject></g></g><g class="edgeLabel" transform="" style="opacity: 1;"><g transform="translate(0,0)" class="label"><rect rx="0" ry="0" width="0" height="0"></rect><foreignObject width="0" height="0"><div xmlns="http://www.w3.org/1999/xhtml" style="display: inline-block; white-space: nowrap;"><span></span></div></foreignObject></g></g><g class="edgeLabel" transform="" style="opacity: 1;"><g transform="translate(0,0)" class="label"><rect rx="0" ry="0" width="0" height="0"></rect><foreignObject width="0" height="0"><div xmlns="http://www.w3.org/1999/xhtml" style="display: inline-block; white-space: nowrap;"><span></span></div></foreignObject></g></g><g class="edgeLabel" transform="" style="opacity: 1;"><g transform="translate(0,0)" class="label"><rect rx="0" ry="0" width="0" height="0"></rect><foreignObject width="0" height="0"><div xmlns="http://www.w3.org/1999/xhtml" style="display: inline-block; white-space: nowrap;"><span></span></div></foreignObject></g></g><g class="edgeLabel" transform="" style="opacity: 1;"><g transform="translate(0,0)" class="label"><rect rx="0" ry="0" width="0" height="0"></rect><foreignObject width="0" height="0"><div xmlns="http://www.w3.org/1999/xhtml" style="display: inline-block; white-space: nowrap;"><span></span></div></foreignObject></g></g></g><g class="nodes"><g class="node default" id="flowchart-wonje-31" transform="translate(433.37109375,30.5)" style="opacity: 1;"><rect rx="0" ry="0" x="-83.015625" y="-22.5" width="166.03125" height="45" class="label-container"></rect><g class="label" transform="translate(0,0)"><g transform="translate(-73.015625,-12.5)"><foreignObject width="146.03125" height="25"><div xmlns="http://www.w3.org/1999/xhtml" style="display: inline-block; white-space: nowrap;">1 원제元帝 사마예睿</div></foreignObject></g></g></g><g class="node default" id="flowchart-myeongje-32" transform="translate(235.046875,125.5)" style="opacity: 1;"><rect rx="0" ry="0" x="-67.015625" y="-22.5" width="134.03125" height="45" class="label-container"></rect><g class="label" transform="translate(0,0)"><g transform="translate(-57.015625,-12.5)"><foreignObject width="114.03125" height="25"><div xmlns="http://www.w3.org/1999/xhtml" style="display: inline-block; white-space: nowrap;">2 명제明帝 소紹</div></foreignObject></g></g></g><g class="node default" id="flowchart-seongje-33" transform="translate(151.03125,220.5)" style="opacity: 1;"><rect rx="0" ry="0" x="-59.015625" y="-22.5" width="118.03125" height="45" class="label-container"></rect><g class="label" transform="translate(0,0)"><g transform="translate(-49.015625,-12.5)"><foreignObject width="98.03125" height="25"><div xmlns="http://www.w3.org/1999/xhtml" style="display: inline-block; white-space: nowrap;">3 성제成 연衍</div></foreignObject></g></g></g><g class="node default" id="flowchart-gangje-34" transform="translate(403.078125,220.5)" style="opacity: 1;"><rect rx="0" ry="0" x="-59.015625" y="-22.5" width="118.03125" height="45" class="label-container"></rect><g class="label" transform="translate(0,0)"><g transform="translate(-49.015625,-12.5)"><foreignObject width="98.03125" height="25"><div xmlns="http://www.w3.org/1999/xhtml" style="display: inline-block; white-space: nowrap;">4 강제康 악岳</div></foreignObject></g></g></g><g class="node default" id="flowchart-mokje-35" transform="translate(403.078125,315.5)" style="opacity: 1;"><rect rx="0" ry="0" x="-59.015625" y="-22.5" width="118.03125" height="45" class="label-container"></rect><g class="label" transform="translate(0,0)"><g transform="translate(-49.015625,-12.5)"><foreignObject width="98.03125" height="25"><div xmlns="http://www.w3.org/1999/xhtml" style="display: inline-block; white-space: nowrap;">5 목제穆 담聃</div></foreignObject></g></g></g><g class="node default" id="flowchart-aeje-36" transform="translate(67.015625,315.5)" style="opacity: 1;"><rect rx="0" ry="0" x="-59.015625" y="-22.5" width="118.03125" height="45" class="label-container"></rect><g class="label" transform="translate(0,0)"><g transform="translate(-49.015625,-12.5)"><foreignObject width="98.03125" height="25"><div xmlns="http://www.w3.org/1999/xhtml" style="display: inline-block; white-space: nowrap;">6 애제哀 비丕</div></foreignObject></g></g></g><g class="node default" id="flowchart-pyeje-37" transform="translate(235.046875,315.5)" style="opacity: 1;"><rect rx="0" ry="0" x="-59.015625" y="-22.5" width="118.03125" height="45" class="label-container"></rect><g class="label" transform="translate(0,0)"><g transform="translate(-49.015625,-12.5)"><foreignObject width="98.03125" height="25"><div xmlns="http://www.w3.org/1999/xhtml" style="display: inline-block; white-space: nowrap;">7 폐제廢 혁奕</div></foreignObject></g></g></g><g class="node default" id="flowchart-ganmunje-38" transform="translate(695.515625,125.5)" style="opacity: 1;"><rect rx="0" ry="0" x="-75.015625" y="-22.5" width="150.03125" height="45" class="label-container"></rect><g class="label" transform="translate(0,0)"><g transform="translate(-65.015625,-12.5)"><foreignObject width="130.03125" height="25"><div xmlns="http://www.w3.org/1999/xhtml" style="display: inline-block; white-space: nowrap;">8 간문제簡文 욱昱</div></foreignObject></g></g></g><g class="node default" id="flowchart-hyomuje-39" transform="translate(695.515625,220.5)" style="opacity: 1;"><rect rx="0" ry="0" x="-75.015625" y="-22.5" width="150.03125" height="45" class="label-container"></rect><g class="label" transform="translate(0,0)"><g transform="translate(-65.015625,-12.5)"><foreignObject width="130.03125" height="25"><div xmlns="http://www.w3.org/1999/xhtml" style="display: inline-block; white-space: nowrap;">9 효무제孝武 요曜</div></foreignObject></g></g></g><g class="node default" id="flowchart-anje-40" transform="translate(591.3046875,315.5)" style="opacity: 1;"><rect rx="0" ry="0" x="-79.2109375" y="-22.5" width="158.421875" height="45" class="label-container"></rect><g class="label" transform="translate(0,0)"><g transform="translate(-69.2109375,-12.5)"><foreignObject width="138.421875" height="25"><div xmlns="http://www.w3.org/1999/xhtml" style="display: inline-block; white-space: nowrap;">10 안제安 덕종德宗</div></foreignObject></g></g></g><g class="node default" id="flowchart-gongje-41" transform="translate(799.7265625,315.5)" style="opacity: 1;"><rect rx="0" ry="0" x="-79.2109375" y="-22.5" width="158.421875" height="45" class="label-container"></rect><g class="label" transform="translate(0,0)"><g transform="translate(-69.2109375,-12.5)"><foreignObject width="138.421875" height="25"><div xmlns="http://www.w3.org/1999/xhtml" style="display: inline-block; white-space: nowrap;">11 공제恭 덕문德文</div></foreignObject></g></g></g></g></g></g></svg></div><div class="md-diagram-panel"><svg id="mermaidChart3" width="100%" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1136 580" height="580" style="max-width: 1136px; height: 620px;" class="md-require-zoom-fix"><style>#mermaidChart3{font-family:"trebuchet ms",verdana,arial,sans-serif;font-size:16px;fill:#333333;}#mermaidChart3 .error-icon{fill:hsl(60,100%,100%);}#mermaidChart3 .error-text{fill:rgb(0,0,0);stroke:rgb(0,0,0);}#mermaidChart3 .edge-thickness-normal{stroke-width:2px;}#mermaidChart3 .edge-thickness-thick{stroke-width:3.5px;}#mermaidChart3 .edge-pattern-solid{stroke-dasharray:0;}#mermaidChart3 .edge-pattern-dashed{stroke-dasharray:3;}#mermaidChart3 .edge-pattern-dotted{stroke-dasharray:2;}#mermaidChart3 .marker{fill:#000000;}#mermaidChart3 .marker.cross{stroke:#000000;}#mermaidChart3 svg{font-family:"trebuchet ms",verdana,arial,sans-serif;font-size:16px;}#mermaidChart3 .mermaid-main-font{font-family:"trebuchet ms",verdana,arial;font-family:var(--mermaid-font-family);}#mermaidChart3 .section{stroke:none;opacity:0.2;}#mermaidChart3 .section0{fill:hsl(60,100%,100%);}#mermaidChart3 .section2{fill:#ECECFF;}#mermaidChart3 .section1,#mermaidChart3 .section3{fill:white;opacity:0.2;}#mermaidChart3 .sectionTitle0{fill:rgb(0,0,0);}#mermaidChart3 .sectionTitle1{fill:rgb(0,0,0);}#mermaidChart3 .sectionTitle2{fill:rgb(0,0,0);}#mermaidChart3 .sectionTitle3{fill:rgb(0,0,0);}#mermaidChart3 .sectionTitle{text-anchor:start;font-size:11px;text-height:14px;font-family:'trebuchet ms',verdana,arial;font-family:var(--mermaid-font-family);}#mermaidChart3 .grid .tick{stroke:lightgrey;opacity:0.8;shape-rendering:crispEdges;}#mermaidChart3 .grid .tick text{font-family:"trebuchet ms",verdana,arial,sans-serif;fill:#333333;}#mermaidChart3 .grid path{stroke-width:0;}#mermaidChart3 .today{fill:none;stroke:red;stroke-width:2px;}#mermaidChart3 .task{stroke-width:2;}#mermaidChart3 .taskText{text-anchor:middle;font-family:'trebuchet ms',verdana,arial;font-family:var(--mermaid-font-family);}#mermaidChart3 .taskText:not([font-size]){font-size:11px;}#mermaidChart3 .taskTextOutsideRight{fill:#333333;text-anchor:start;font-size:11px;font-family:'trebuchet ms',verdana,arial;font-family:var(--mermaid-font-family);}#mermaidChart3 .taskTextOutsideLeft{fill:#333333;text-anchor:end;font-size:11px;}#mermaidChart3 .task.clickable{cursor:pointer;}#mermaidChart3 .taskText.clickable{cursor:pointer;fill:#003163 !important;font-weight:bold;}#mermaidChart3 .taskTextOutsideLeft.clickable{cursor:pointer;fill:#003163 !important;font-weight:bold;}#mermaidChart3 .taskTextOutsideRight.clickable{cursor:pointer;fill:#003163 !important;font-weight:bold;}#mermaidChart3 .taskText0,#mermaidChart3 .taskText1,#mermaidChart3 .taskText2,#mermaidChart3 .taskText3{fill:#333333;}#mermaidChart3 .task0,#mermaidChart3 .task1,#mermaidChart3 .task2,#mermaidChart3 .task3{fill:#ECECFF;stroke:hsl(240,60%,86.2745098039%);}#mermaidChart3 .taskTextOutside0,#mermaidChart3 .taskTextOutside2{fill:#333333;}#mermaidChart3 .taskTextOutside1,#mermaidChart3 .taskTextOutside3{fill:#333333;}#mermaidChart3 .active0,#mermaidChart3 .active1,#mermaidChart3 .active2,#mermaidChart3 .active3{fill:hsl(240,100%,100%);stroke:#ECECFF;}#mermaidChart3 .activeText0,#mermaidChart3 .activeText1,#mermaidChart3 .activeText2,#mermaidChart3 .activeText3{fill:#333333 !important;}#mermaidChart3 .done0,#mermaidChart3 .done1,#mermaidChart3 .done2,#mermaidChart3 .done3{stroke:grey;fill:lightgrey;stroke-width:2;}#mermaidChart3 .doneText0,#mermaidChart3 .doneText1,#mermaidChart3 .doneText2,#mermaidChart3 .doneText3{fill:#333333 !important;}#mermaidChart3 .crit0,#mermaidChart3 .crit1,#mermaidChart3 .crit2,#mermaidChart3 .crit3{stroke:#ff8888;fill:red;stroke-width:2;}#mermaidChart3 .activeCrit0,#mermaidChart3 .activeCrit1,#mermaidChart3 .activeCrit2,#mermaidChart3 .activeCrit3{stroke:#ff8888;fill:hsl(240,100%,100%);stroke-width:2;}#mermaidChart3 .doneCrit0,#mermaidChart3 .doneCrit1,#mermaidChart3 .doneCrit2,#mermaidChart3 .doneCrit3{stroke:#ff8888;fill:lightgrey;stroke-width:2;cursor:pointer;shape-rendering:crispEdges;}#mermaidChart3 .milestone{-webkit-transform:rotate(45deg) scale(0.8,0.8);-ms-transform:rotate(45deg) scale(0.8,0.8);transform:rotate(45deg) scale(0.8,0.8);}#mermaidChart3 .milestoneText{font-style:italic;}#mermaidChart3 .doneCritText0,#mermaidChart3 .doneCritText1,#mermaidChart3 .doneCritText2,#mermaidChart3 .doneCritText3{fill:#333333 !important;}#mermaidChart3 .activeCritText0,#mermaidChart3 .activeCritText1,#mermaidChart3 .activeCritText2,#mermaidChart3 .activeCritText3{fill:#333333 !important;}#mermaidChart3 .titleText{text-anchor:middle;font-size:18px;fill:var(--text-color);font-family:'trebuchet ms',verdana,arial;font-family:var(--mermaid-font-family);}#mermaidChart3:root{--mermaid-font-family:sans-serif;}#mermaidChart3:root{--mermaid-alt-font-family:sans-serif;}#mermaidChart3 gantt{fill:apa;}</style><g></g><g class="grid" transform="translate(75, 530)" fill="none" font-size="10" font-family="sans-serif" text-anchor="middle"><path class="domain" stroke="currentColor" d="M0.5,-495V0.5H1041.5V-495"></path><g class="tick" opacity="1" transform="translate(30.5,0)"><line stroke="currentColor" y2="-495"></line><text fill="#000" y="3" dy="1em" stroke="none" font-size="10" style="text-anchor: middle;">0320</text></g><g class="tick" opacity="1" transform="translate(131.5,0)"><line stroke="currentColor" y2="-495"></line><text fill="#000" y="3" dy="1em" stroke="none" font-size="10" style="text-anchor: middle;">0330</text></g><g class="tick" opacity="1" transform="translate(232.5,0)"><line stroke="currentColor" y2="-495"></line><text fill="#000" y="3" dy="1em" stroke="none" font-size="10" style="text-anchor: middle;">0340</text></g><g class="tick" opacity="1" transform="translate(334.5,0)"><line stroke="currentColor" y2="-495"></line><text fill="#000" y="3" dy="1em" stroke="none" font-size="10" style="text-anchor: middle;">0350</text></g><g class="tick" opacity="1" transform="translate(435.5,0)"><line stroke="currentColor" y2="-495"></line><text fill="#000" y="3" dy="1em" stroke="none" font-size="10" style="text-anchor: middle;">0360</text></g><g class="tick" opacity="1" transform="translate(536.5,0)"><line stroke="currentColor" y2="-495"></line><text fill="#000" y="3" dy="1em" stroke="none" font-size="10" style="text-anchor: middle;">0370</text></g><g class="tick" opacity="1" transform="translate(637.5,0)"><line stroke="currentColor" y2="-495"></line><text fill="#000" y="3" dy="1em" stroke="none" font-size="10" style="text-anchor: middle;">0380</text></g><g class="tick" opacity="1" transform="translate(738.5,0)"><line stroke="currentColor" y2="-495"></line><text fill="#000" y="3" dy="1em" stroke="none" font-size="10" style="text-anchor: middle;">0390</text></g><g class="tick" opacity="1" transform="translate(839.5,0)"><line stroke="currentColor" y2="-495"></line><text fill="#000" y="3" dy="1em" stroke="none" font-size="10" style="text-anchor: middle;">0400</text></g><g class="tick" opacity="1" transform="translate(940.5,0)"><line stroke="currentColor" y2="-495"></line><text fill="#000" y="3" dy="1em" stroke="none" font-size="10" style="text-anchor: middle;">0410</text></g><g class="tick" opacity="1" transform="translate(1041.5,0)"><line stroke="currentColor" y2="-495"></line><text fill="#000" y="3" dy="1em" stroke="none" font-size="10" style="text-anchor: middle;">0420</text></g></g><g><rect x="0" y="48" width="1126" height="24" class="section section0"></rect><rect x="0" y="72" width="1126" height="24" class="section section0"></rect><rect x="0" y="96" width="1126" height="24" class="section section0"></rect><rect x="0" y="120" width="1126" height="24" class="section section0"></rect><rect x="0" y="144" width="1126" height="24" class="section section0"></rect><rect x="0" y="312" width="1126" height="24" class="section section1"></rect><rect x="0" y="336" width="1126" height="24" class="section section1"></rect><rect x="0" y="360" width="1126" height="24" class="section section1"></rect><rect x="0" y="168" width="1126" height="24" class="section section0"></rect><rect x="0" y="192" width="1126" height="24" class="section section0"></rect><rect x="0" y="216" width="1126" height="24" class="section section0"></rect><rect x="0" y="240" width="1126" height="24" class="section section0"></rect><rect x="0" y="456" width="1126" height="24" class="section section2"></rect><rect x="0" y="384" width="1126" height="24" class="section section1"></rect><rect x="0" y="408" width="1126" height="24" class="section section1"></rect><rect x="0" y="432" width="1126" height="24" class="section section1"></rect><rect x="0" y="480" width="1126" height="24" class="section section2"></rect><rect x="0" y="264" width="1126" height="24" class="section section0"></rect><rect x="0" y="504" width="1126" height="24" class="section section2"></rect><rect x="0" y="288" width="1126" height="24" class="section section0"></rect></g><g><rect id="task1" rx="3" ry="3" x="75" y="50" width="51" height="20" transform-origin="100.5px 60px" class="task task0 "></rect><rect id="task2" rx="3" ry="3" x="136" y="74" width="20" height="20" transform-origin="146px 84px" class="task task0 "></rect><rect id="task3" rx="3" ry="3" x="166" y="98" width="162" height="20" transform-origin="247px 108px" class="task task0 "></rect><rect id="task4" rx="3" ry="3" x="338" y="122" width="10" height="20" transform-origin="343px 132px" class="task task0 "></rect><rect id="task5" rx="3" ry="3" x="358" y="146" width="162" height="20" transform-origin="439px 156px" class="task task0 "></rect><rect id="task12" rx="3" ry="3" x="419" y="314" width="30" height="20" transform-origin="434px 180px" class="task task1 "></rect><rect id="task13" rx="3" ry="3" x="459" y="338" width="10" height="20" transform-origin="464px 204px" class="task task1 "></rect><rect id="task14" rx="3" ry="3" x="479" y="362" width="273" height="20" transform-origin="615.5px 228px" class="task task1 "></rect><rect id="task6" rx="3" ry="3" x="530" y="170" width="30" height="20" transform-origin="545px 252px" class="task task0 "></rect><rect id="task7" rx="3" ry="3" x="570" y="194" width="41" height="20" transform-origin="590.5px 276px" class="task task0 "></rect><rect id="task8" rx="3" ry="3" x="621" y="218" width="10" height="20" transform-origin="626px 300px" class="task task0 "></rect><rect id="task9" rx="3" ry="3" x="641" y="242" width="232" height="20" transform-origin="757px 324px" class="task task0 "></rect><rect id="task18" rx="3" ry="3" x="752" y="458" width="91" height="20" transform-origin="797.5px 348px" class="task task2 "></rect><rect id="task15" rx="3" ry="3" x="762" y="386" width="10" height="20" transform-origin="767px 372px" class="task task1 "></rect><rect id="task16" rx="3" ry="3" x="772" y="410" width="71" height="20" transform-origin="807.5px 396px" class="task task1 "></rect><rect id="task17" rx="3" ry="3" x="853" y="434" width="10" height="20" transform-origin="858px 420px" class="task task1 "></rect><rect id="task19" rx="3" ry="3" x="853" y="482" width="212" height="20" transform-origin="959px 444px" class="task task2 "></rect><rect id="task10" rx="3" ry="3" x="884" y="266" width="212" height="20" transform-origin="990px 468px" class="task task0 "></rect><rect id="task20" rx="3" ry="3" x="1076" y="506" width="10" height="20" transform-origin="1081px 492px" class="task task2 "></rect><rect id="task11" rx="3" ry="3" x="1106" y="290" width="10" height="20" transform-origin="1111px 516px" class="task task0 "></rect><text id="task1-text" font-size="11" x="100.5" y="63.5" text-height="20" class=" taskText taskText0  width-44">원제元帝      </text><text id="task2-text" font-size="11" x="161" y="87.5" text-height="20" class=" taskTextOutsideRight taskTextOutside0  width-44">명제明帝        </text><text id="task3-text" font-size="11" x="247" y="111.5" text-height="20" class=" taskText taskText0  width-33">성제成        </text><text id="task4-text" font-size="11" x="353" y="135.5" text-height="20" class=" taskTextOutsideRight taskTextOutside0  width-33">강제康        </text><text id="task5-text" font-size="11" x="439" y="159.5" text-height="20" class=" taskText taskText0  width-33">목제穆        </text><text id="task12-text" font-size="11" x="454" y="327.5" text-height="20" class=" taskTextOutsideRight taskTextOutside1  width-69.328125">고조 부건符健 </text><text id="task13-text" font-size="11" x="474" y="351.5" text-height="20" class=" taskTextOutsideRight taskTextOutside1  width-69.328125">폐제廢 부생生 </text><text id="task14-text" font-size="11" x="615.5" y="375.5" text-height="20" class=" taskText taskText1  width-80.328125">세조世祖 부견堅 </text><text id="task6-text" font-size="11" x="565" y="183.5" text-height="20" class=" taskTextOutsideRight taskTextOutside0  width-33">애제哀        </text><text id="task7-text" font-size="11" x="590.5" y="207.5" text-height="20" class=" taskText taskText0  width-33">폐제廢        </text><text id="task8-text" font-size="11" x="636" y="231.5" text-height="20" class=" taskTextOutsideRight taskTextOutside0  width-55">간문제簡文        </text><text id="task9-text" font-size="11" x="757" y="255.5" text-height="20" class=" taskText taskText0  width-55">효무제孝武        </text><text id="task18-text" font-size="11" x="797.5" y="471.5" text-height="20" class=" taskText taskText2  width-69.328125">태조 요장姚萇 </text><text id="task15-text" font-size="11" x="777" y="399.5" text-height="20" class=" taskTextOutsideRight taskTextOutside1  width-80.328125">애평제哀平 비丕 </text><text id="task16-text" font-size="11" x="807.5" y="423.5" text-height="20" class=" taskText taskText1  width-58.328125">태종太 등登 </text><text id="task17-text" font-size="11" x="868" y="447.5" text-height="20" class=" taskTextOutsideRight taskTextOutside1  width-69.328125">말주末主 숭崇 </text><text id="task19-text" font-size="11" x="959" y="495.5" text-height="20" class=" taskText taskText2  width-58.328125">고조 요흥興 </text><text id="task10-text" font-size="11" x="990" y="279.5" text-height="20" class=" taskText taskText0  width-33">안제安        </text><text id="task20-text" font-size="11" x="1071" y="519.5" text-height="20" class=" taskTextOutsideLeft taskTextOutside2 ">후주后主 요홍泓 </text><text id="task11-text" font-size="11" x="1101" y="303.5" text-height="20" class=" taskTextOutsideLeft taskTextOutside0 ">공제恭        </text></g><g><text dy="0em" x="10" y="182" class="sectionTitle sectionTitle0"><tspan alignment-baseline="central" x="10">동진東晉</tspan></text><text dy="0em" x="10" y="386" class="sectionTitle sectionTitle1"><tspan alignment-baseline="central" x="10">전진前秦</tspan></text><text dy="0em" x="10" y="494" class="sectionTitle sectionTitle2"><tspan alignment-baseline="central" x="10">후진後秦</tspan></text></g><g class="today"><line x1="17298" x2="17298" y1="25" y2="555" class="today"></line></g><text x="568" y="25" class="titleText">남북조</text></svg></div><div class="md-diagram-panel"><svg id="mermaidChart4" width="100%" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1136 916" height="916" style="max-width: 1136px; height: 956px;" class="md-require-zoom-fix"><style>#mermaidChart4{font-family:"trebuchet ms",verdana,arial,sans-serif;font-size:16px;fill:#333333;}#mermaidChart4 .error-icon{fill:hsl(60,100%,100%);}#mermaidChart4 .error-text{fill:rgb(0,0,0);stroke:rgb(0,0,0);}#mermaidChart4 .edge-thickness-normal{stroke-width:2px;}#mermaidChart4 .edge-thickness-thick{stroke-width:3.5px;}#mermaidChart4 .edge-pattern-solid{stroke-dasharray:0;}#mermaidChart4 .edge-pattern-dashed{stroke-dasharray:3;}#mermaidChart4 .edge-pattern-dotted{stroke-dasharray:2;}#mermaidChart4 .marker{fill:#000000;}#mermaidChart4 .marker.cross{stroke:#000000;}#mermaidChart4 svg{font-family:"trebuchet ms",verdana,arial,sans-serif;font-size:16px;}#mermaidChart4 .mermaid-main-font{font-family:"trebuchet ms",verdana,arial;font-family:var(--mermaid-font-family);}#mermaidChart4 .section{stroke:none;opacity:0.2;}#mermaidChart4 .section0{fill:hsl(60,100%,100%);}#mermaidChart4 .section2{fill:#ECECFF;}#mermaidChart4 .section1,#mermaidChart4 .section3{fill:white;opacity:0.2;}#mermaidChart4 .sectionTitle0{fill:rgb(0,0,0);}#mermaidChart4 .sectionTitle1{fill:rgb(0,0,0);}#mermaidChart4 .sectionTitle2{fill:rgb(0,0,0);}#mermaidChart4 .sectionTitle3{fill:rgb(0,0,0);}#mermaidChart4 .sectionTitle{text-anchor:start;font-size:11px;text-height:14px;font-family:'trebuchet ms',verdana,arial;font-family:var(--mermaid-font-family);}#mermaidChart4 .grid .tick{stroke:lightgrey;opacity:0.8;shape-rendering:crispEdges;}#mermaidChart4 .grid .tick text{font-family:"trebuchet ms",verdana,arial,sans-serif;fill:#333333;}#mermaidChart4 .grid path{stroke-width:0;}#mermaidChart4 .today{fill:none;stroke:red;stroke-width:2px;}#mermaidChart4 .task{stroke-width:2;}#mermaidChart4 .taskText{text-anchor:middle;font-family:'trebuchet ms',verdana,arial;font-family:var(--mermaid-font-family);}#mermaidChart4 .taskText:not([font-size]){font-size:11px;}#mermaidChart4 .taskTextOutsideRight{fill:#333333;text-anchor:start;font-size:11px;font-family:'trebuchet ms',verdana,arial;font-family:var(--mermaid-font-family);}#mermaidChart4 .taskTextOutsideLeft{fill:#333333;text-anchor:end;font-size:11px;}#mermaidChart4 .task.clickable{cursor:pointer;}#mermaidChart4 .taskText.clickable{cursor:pointer;fill:#003163 !important;font-weight:bold;}#mermaidChart4 .taskTextOutsideLeft.clickable{cursor:pointer;fill:#003163 !important;font-weight:bold;}#mermaidChart4 .taskTextOutsideRight.clickable{cursor:pointer;fill:#003163 !important;font-weight:bold;}#mermaidChart4 .taskText0,#mermaidChart4 .taskText1,#mermaidChart4 .taskText2,#mermaidChart4 .taskText3{fill:#333333;}#mermaidChart4 .task0,#mermaidChart4 .task1,#mermaidChart4 .task2,#mermaidChart4 .task3{fill:#ECECFF;stroke:hsl(240,60%,86.2745098039%);}#mermaidChart4 .taskTextOutside0,#mermaidChart4 .taskTextOutside2{fill:#333333;}#mermaidChart4 .taskTextOutside1,#mermaidChart4 .taskTextOutside3{fill:#333333;}#mermaidChart4 .active0,#mermaidChart4 .active1,#mermaidChart4 .active2,#mermaidChart4 .active3{fill:hsl(240,100%,100%);stroke:#ECECFF;}#mermaidChart4 .activeText0,#mermaidChart4 .activeText1,#mermaidChart4 .activeText2,#mermaidChart4 .activeText3{fill:#333333 !important;}#mermaidChart4 .done0,#mermaidChart4 .done1,#mermaidChart4 .done2,#mermaidChart4 .done3{stroke:grey;fill:lightgrey;stroke-width:2;}#mermaidChart4 .doneText0,#mermaidChart4 .doneText1,#mermaidChart4 .doneText2,#mermaidChart4 .doneText3{fill:#333333 !important;}#mermaidChart4 .crit0,#mermaidChart4 .crit1,#mermaidChart4 .crit2,#mermaidChart4 .crit3{stroke:#ff8888;fill:red;stroke-width:2;}#mermaidChart4 .activeCrit0,#mermaidChart4 .activeCrit1,#mermaidChart4 .activeCrit2,#mermaidChart4 .activeCrit3{stroke:#ff8888;fill:hsl(240,100%,100%);stroke-width:2;}#mermaidChart4 .doneCrit0,#mermaidChart4 .doneCrit1,#mermaidChart4 .doneCrit2,#mermaidChart4 .doneCrit3{stroke:#ff8888;fill:lightgrey;stroke-width:2;cursor:pointer;shape-rendering:crispEdges;}#mermaidChart4 .milestone{-webkit-transform:rotate(45deg) scale(0.8,0.8);-ms-transform:rotate(45deg) scale(0.8,0.8);transform:rotate(45deg) scale(0.8,0.8);}#mermaidChart4 .milestoneText{font-style:italic;}#mermaidChart4 .doneCritText0,#mermaidChart4 .doneCritText1,#mermaidChart4 .doneCritText2,#mermaidChart4 .doneCritText3{fill:#333333 !important;}#mermaidChart4 .activeCritText0,#mermaidChart4 .activeCritText1,#mermaidChart4 .activeCritText2,#mermaidChart4 .activeCritText3{fill:#333333 !important;}#mermaidChart4 .titleText{text-anchor:middle;font-size:18px;fill:var(--text-color);font-family:'trebuchet ms',verdana,arial;font-family:var(--mermaid-font-family);}#mermaidChart4:root{--mermaid-font-family:sans-serif;}#mermaidChart4:root{--mermaid-alt-font-family:sans-serif;}#mermaidChart4 gantt{fill:apa;}</style><g></g><g class="grid" transform="translate(75, 866)" fill="none" font-size="10" font-family="sans-serif" text-anchor="middle"><path class="domain" stroke="currentColor" d="M0.5,-831V0.5H1041.5V-831"></path><g class="tick" opacity="1" transform="translate(85.5,0)"><line stroke="currentColor" y2="-831"></line><text fill="#000" y="3" dy="1em" stroke="none" font-size="10" style="text-anchor: middle;">0400</text></g><g class="tick" opacity="1" transform="translate(207.5,0)"><line stroke="currentColor" y2="-831"></line><text fill="#000" y="3" dy="1em" stroke="none" font-size="10" style="text-anchor: middle;">0420</text></g><g class="tick" opacity="1" transform="translate(329.5,0)"><line stroke="currentColor" y2="-831"></line><text fill="#000" y="3" dy="1em" stroke="none" font-size="10" style="text-anchor: middle;">0440</text></g><g class="tick" opacity="1" transform="translate(450.5,0)"><line stroke="currentColor" y2="-831"></line><text fill="#000" y="3" dy="1em" stroke="none" font-size="10" style="text-anchor: middle;">0460</text></g><g class="tick" opacity="1" transform="translate(572.5,0)"><line stroke="currentColor" y2="-831"></line><text fill="#000" y="3" dy="1em" stroke="none" font-size="10" style="text-anchor: middle;">0480</text></g><g class="tick" opacity="1" transform="translate(694.5,0)"><line stroke="currentColor" y2="-831"></line><text fill="#000" y="3" dy="1em" stroke="none" font-size="10" style="text-anchor: middle;">0500</text></g><g class="tick" opacity="1" transform="translate(816.5,0)"><line stroke="currentColor" y2="-831"></line><text fill="#000" y="3" dy="1em" stroke="none" font-size="10" style="text-anchor: middle;">0520</text></g><g class="tick" opacity="1" transform="translate(937.5,0)"><line stroke="currentColor" y2="-831"></line><text fill="#000" y="3" dy="1em" stroke="none" font-size="10" style="text-anchor: middle;">0540</text></g></g><g><rect x="0" y="48" width="1126" height="24" class="section section0"></rect><rect x="0" y="72" width="1126" height="24" class="section section0"></rect><rect x="0" y="408" width="1126" height="24" class="section section3"></rect><rect x="0" y="432" width="1126" height="24" class="section section3"></rect><rect x="0" y="96" width="1126" height="24" class="section section0"></rect><rect x="0" y="456" width="1126" height="24" class="section section3"></rect><rect x="0" y="120" width="1126" height="24" class="section section0"></rect><rect x="0" y="480" width="1126" height="24" class="section section3"></rect><rect x="0" y="504" width="1126" height="24" class="section section3"></rect><rect x="0" y="528" width="1126" height="24" class="section section3"></rect><rect x="0" y="144" width="1126" height="24" class="section section0"></rect><rect x="0" y="168" width="1126" height="24" class="section section0"></rect><rect x="0" y="552" width="1126" height="24" class="section section3"></rect><rect x="0" y="576" width="1126" height="24" class="section section3"></rect><rect x="0" y="600" width="1126" height="24" class="section section0"></rect><rect x="0" y="624" width="1126" height="24" class="section section0"></rect><rect x="0" y="648" width="1126" height="24" class="section section0"></rect><rect x="0" y="672" width="1126" height="24" class="section section0"></rect><rect x="0" y="696" width="1126" height="24" class="section section0"></rect><rect x="0" y="720" width="1126" height="24" class="section section0"></rect><rect x="0" y="192" width="1126" height="24" class="section section0"></rect><rect x="0" y="744" width="1126" height="24" class="section section0"></rect><rect x="0" y="768" width="1126" height="24" class="section section1"></rect><rect x="0" y="216" width="1126" height="24" class="section section0"></rect><rect x="0" y="240" width="1126" height="24" class="section section0"></rect><rect x="0" y="264" width="1126" height="24" class="section section0"></rect><rect x="0" y="288" width="1126" height="24" class="section section0"></rect><rect x="0" y="384" width="1126" height="24" class="section section2"></rect><rect x="0" y="312" width="1126" height="24" class="section section1"></rect><rect x="0" y="792" width="1126" height="24" class="section section1"></rect><rect x="0" y="336" width="1126" height="24" class="section section1"></rect><rect x="0" y="816" width="1126" height="24" class="section section1"></rect><rect x="0" y="360" width="1126" height="24" class="section section1"></rect><rect x="0" y="840" width="1126" height="24" class="section section1"></rect></g><g><rect id="task1" rx="3" ry="3" x="75" y="50" width="134" height="20" transform-origin="142px 60px" class="task task0 "></rect><rect id="task2" rx="3" ry="3" x="215" y="74" width="85" height="20" transform-origin="257.5px 84px" class="task task0 "></rect><rect id="task16" rx="3" ry="3" x="282" y="410" width="12" height="20" transform-origin="288px 108px" class="task task3 "></rect><rect id="task17" rx="3" ry="3" x="300" y="434" width="6" height="20" transform-origin="303px 132px" class="task task3 "></rect><rect id="task3" rx="3" ry="3" x="306" y="98" width="171" height="20" transform-origin="391.5px 156px" class="task task0 "></rect><rect id="task18" rx="3" ry="3" x="306" y="458" width="177" height="20" transform-origin="394.5px 180px" class="task task3 "></rect><rect id="task4" rx="3" ry="3" x="477" y="122" width="79" height="20" transform-origin="516.5px 204px" class="task task0 "></rect><rect id="task19" rx="3" ry="3" x="489" y="482" width="61" height="20" transform-origin="519.5px 228px" class="task task3 "></rect><rect id="task20" rx="3" ry="3" x="550" y="506" width="6" height="20" transform-origin="553px 252px" class="task task3 "></rect><rect id="task21" rx="3" ry="3" x="556" y="530" width="43" height="20" transform-origin="577.5px 276px" class="task task3 "></rect><rect id="task5" rx="3" ry="3" x="562" y="146" width="24" height="20" transform-origin="574px 300px" class="task task0 "></rect><rect id="task6" rx="3" ry="3" x="592" y="170" width="171" height="20" transform-origin="677.5px 324px" class="task task0 "></rect><rect id="task22" rx="3" ry="3" x="605" y="554" width="18" height="20" transform-origin="614px 348px" class="task task3 "></rect><rect id="task23" rx="3" ry="3" x="629" y="578" width="12" height="20" transform-origin="635px 372px" class="task task3 "></rect><rect id="task24" rx="3" ry="3" x="641" y="602" width="18" height="20" transform-origin="650px 396px" class="task task0 "></rect><rect id="task25" rx="3" ry="3" x="666" y="626" width="60" height="20" transform-origin="696px 420px" class="task task0 "></rect><rect id="task26" rx="3" ry="3" x="732" y="650" width="0" height="20" transform-origin="732px 444px" class="task task0 "></rect><rect id="task27" rx="3" ry="3" x="732" y="674" width="0" height="20" transform-origin="732px 468px" class="task task0 "></rect><rect id="task28" rx="3" ry="3" x="732" y="698" width="25" height="20" transform-origin="744.5px 492px" class="task task0 "></rect><rect id="task29" rx="3" ry="3" x="763" y="722" width="6" height="20" transform-origin="766px 516px" class="task task0 "></rect><rect id="task7" rx="3" ry="3" x="769" y="194" width="91" height="20" transform-origin="814.5px 540px" class="task task0 "></rect><rect id="task30" rx="3" ry="3" x="775" y="746" width="6" height="20" transform-origin="778px 564px" class="task task0 "></rect><rect id="task31" rx="3" ry="3" x="781" y="770" width="286" height="20" transform-origin="924px 588px" class="task task1 "></rect><rect id="task8" rx="3" ry="3" x="866" y="218" width="73" height="20" transform-origin="902.5px 612px" class="task task0 "></rect><rect id="task9" rx="3" ry="3" x="939" y="242" width="13" height="20" transform-origin="945.5px 636px" class="task task0 "></rect><rect id="task10" rx="3" ry="3" x="958" y="266" width="6" height="20" transform-origin="961px 660px" class="task task0 "></rect><rect id="task11" rx="3" ry="3" x="958" y="290" width="18" height="20" transform-origin="967px 684px" class="task task0 "></rect><rect id="task15" rx="3" ry="3" x="976" y="386" width="97" height="20" transform-origin="1024.5px 708px" class="task task2 "></rect><rect id="task12" rx="3" ry="3" x="982" y="314" width="97" height="20" transform-origin="1030.5px 732px" class="task task1 "></rect><rect id="task32" rx="3" ry="3" x="1073" y="794" width="6" height="20" transform-origin="1076px 756px" class="task task1 "></rect><rect id="task13" rx="3" ry="3" x="1086" y="338" width="6" height="20" transform-origin="1089px 780px" class="task task1 "></rect><rect id="task33" rx="3" ry="3" x="1086" y="818" width="12" height="20" transform-origin="1092px 804px" class="task task1 "></rect><rect id="task14" rx="3" ry="3" x="1098" y="362" width="12" height="20" transform-origin="1104px 828px" class="task task1 "></rect><rect id="task34" rx="3" ry="3" x="1104" y="842" width="12" height="20" transform-origin="1110px 852px" class="task task1 "></rect><text id="task1-text" font-size="11" x="142" y="63.5" text-height="20" class=" taskText taskText0  width-102.328125">도무제 탁발규拓跋珪 </text><text id="task2-text" font-size="11" x="257.5" y="87.5" text-height="20" class=" taskText taskText0  width-47.328125">명원제 사 </text><text id="task16-text" font-size="11" x="299" y="423.5" text-height="20" class=" taskTextOutsideRight taskTextOutside3  width-80.328125">무제武 유유劉裕 </text><text id="task17-text" font-size="11" x="311" y="447.5" text-height="20" class=" taskTextOutsideRight taskTextOutside3  width-80.328125">소제少 의부義符 </text><text id="task3-text" font-size="11" x="391.5" y="111.5" text-height="20" class=" taskText taskText0  width-47.328125">태무제 도 </text><text id="task18-text" font-size="11" x="394.5" y="471.5" text-height="20" class=" taskText taskText3  width-80.328125">문제文 의륭義隆 </text><text id="task4-text" font-size="11" x="516.5" y="135.5" text-height="20" class=" taskText taskText0  width-47.328125">문성제 준 </text><text id="task19-text" font-size="11" x="555" y="495.5" text-height="20" class=" taskTextOutsideRight taskTextOutside3  width-69.328125">효무孝武 준駿 </text><text id="task20-text" font-size="11" x="561" y="519.5" text-height="20" class=" taskTextOutsideRight taskTextOutside3  width-105.640625">전폐제 前廢 자업子業 </text><text id="task21-text" font-size="11" x="604" y="543.5" text-height="20" class=" taskTextOutsideRight taskTextOutside3  width-58.328125">명제明 욱彧 </text><text id="task5-text" font-size="11" x="591" y="159.5" text-height="20" class=" taskTextOutsideRight taskTextOutside0  width-47.328125">헌문제 홍 </text><text id="task6-text" font-size="11" x="677.5" y="183.5" text-height="20" class=" taskText taskText0  width-58.328125">효문제 원굉 </text><text id="task22-text" font-size="11" x="628" y="567.5" text-height="20" class=" taskTextOutsideRight taskTextOutside3  width-80.328125">후폐제后廢 욱昱 </text><text id="task23-text" font-size="11" x="646" y="591.5" text-height="20" class=" taskTextOutsideRight taskTextOutside3  width-58.328125">순제順 준準 </text><text id="task24-text" font-size="11" x="664" y="615.5" text-height="20" class=" taskTextOutsideRight taskTextOutside0  width-102.328125">고제高 소도성蕭道成 </text><text id="task25-text" font-size="11" x="696" y="639.5" text-height="20" class=" taskText taskText0  width-58.328125">무제武 색賾 </text><text id="task26-text" font-size="11" x="737" y="663.5" text-height="20" class=" taskTextOutsideRight taskTextOutside0  width-102.328125">욱림왕郁林 소업昭業 </text><text id="task27-text" font-size="11" x="737" y="687.5" text-height="20" class=" taskTextOutsideRight taskTextOutside0  width-102.328125">해릉왕海陵 소문昭文 </text><text id="task28-text" font-size="11" x="762" y="711.5" text-height="20" class=" taskTextOutsideRight taskTextOutside0  width-58.328125">명제明 란鸞 </text><text id="task29-text" font-size="11" x="774" y="735.5" text-height="20" class=" taskTextOutsideRight taskTextOutside0  width-113.328125">동혼후東昏侯 보권寶券 </text><text id="task7-text" font-size="11" x="814.5" y="207.5" text-height="20" class=" taskText taskText0  width-58.328125">선무제 원각 </text><text id="task30-text" font-size="11" x="786" y="759.5" text-height="20" class=" taskTextOutsideRight taskTextOutside0  width-80.328125">화제和 보융寶融 </text><text id="task31-text" font-size="11" x="924" y="783.5" text-height="20" class=" taskText taskText1  width-47.328125">무제 소연 </text><text id="task8-text" font-size="11" x="902.5" y="231.5" text-height="20" class=" taskText taskText0  width-47.328125">효명제 후 </text><text id="task9-text" font-size="11" x="957" y="255.5" text-height="20" class=" taskTextOutsideRight taskTextOutside0  width-58.328125">효장제 자유 </text><text id="task10-text" font-size="11" x="969" y="279.5" text-height="20" class=" taskTextOutsideRight taskTextOutside0  width-47.328125">절민제 공 </text><text id="task11-text" font-size="11" x="981" y="303.5" text-height="20" class=" taskTextOutsideRight taskTextOutside0  width-36.328125">폐제 랑 </text><text id="task15-text" font-size="11" x="1024.5" y="399.5" text-height="20" class=" taskText taskText2  width-58.328125">효정제 선견 </text><text id="task12-text" font-size="11" x="1030.5" y="327.5" text-height="20" class=" taskText taskText1  width-58.328125">효문제 보거 </text><text id="task32-text" font-size="11" x="1068" y="807.5" text-height="20" class=" taskTextOutsideLeft taskTextOutside1 ">간문제 강 </text><text id="task13-text" font-size="11" x="1081" y="351.5" text-height="20" class=" taskTextOutsideLeft taskTextOutside1 ">폐제 흠 </text><text id="task33-text" font-size="11" x="1081" y="831.5" text-height="20" class=" taskTextOutsideLeft taskTextOutside1 ">원제 역 </text><text id="task14-text" font-size="11" x="1093" y="375.5" text-height="20" class=" taskTextOutsideLeft taskTextOutside1 ">공제 확 </text><text id="task34-text" font-size="11" x="1099" y="855.5" text-height="20" class=" taskTextOutsideLeft taskTextOutside1 ">경제 방지 </text></g><g><text dy="0em" x="10" y="182" class="sectionTitle sectionTitle0"><tspan alignment-baseline="central" x="10">북위北魏</tspan></text><text dy="0em" x="10" y="350" class="sectionTitle sectionTitle1"><tspan alignment-baseline="central" x="10">서위西魏</tspan></text><text dy="0em" x="10" y="398" class="sectionTitle sectionTitle2"><tspan alignment-baseline="central" x="10">동위東魏</tspan></text><text dy="0em" x="10" y="506" class="sectionTitle sectionTitle3"><tspan alignment-baseline="central" x="10">송宋</tspan></text><text dy="0em" x="10" y="686" class="sectionTitle sectionTitle0"><tspan alignment-baseline="central" x="10">제濟</tspan></text><text dy="0em" x="10" y="818" class="sectionTitle sectionTitle1"><tspan alignment-baseline="central" x="10">양梁</tspan></text></g><g class="today"><line x1="10029" x2="10029" y1="25" y2="891" class="today"></line></g><text x="568" y="25" class="titleText">남북조 북위/송제</text></svg></div><p>&nbsp;</p></div>
 </body>
 </html>

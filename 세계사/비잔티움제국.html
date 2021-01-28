@@ -3,123 +3,24 @@
 <head>
 <meta charset='UTF-8'><meta name='viewport' content='width=device-width initial-scale=1'>
 <title>비잔티움제국</title><link href='https://fonts.loli.net/css?family=Open+Sans:400italic,700italic,700,400&subset=latin,latin-ext' rel='stylesheet' type='text/css' /><style type='text/css'>html {overflow-x: initial !important;}:root { --node-fill: #ECECFF; --node-border: #CCCCFF; --cluster-fill: #ffffde; --cluster-border: #aaaa33; --note-fill: #fff5ad; --note-border: #aaaa33; --mermaid-color: var(--text-color); }
-.label { font-family: var(--mermaid-font-family); color: rgb(51, 51, 51); }
-.label text { fill: rgb(51, 51, 51); }
-.node rect, .node circle, .node ellipse, .node polygon { fill: var(--node-fill); stroke: rgb(147, 112, 219); stroke-width: 1px; }
-.node .label { text-align: center; }
-.node.clickable { cursor: pointer; }
-.arrowheadPath { fill: var(--text-color); }
-.edgePath .path { stroke: var(--text-color); stroke-width: 1.5px; }
-.edgeLabel { background-color: rgb(232, 232, 232); text-align: center; }
-.cluster rect { fill: var(--cluster-fill); stroke: var(--cluster-border); stroke-width: 1px; }
-.cluster text { fill: var(--text-color); }
-div.mermaidTooltip { position: absolute; text-align: center; max-width: 200px; padding: 2px; font-family: var(--mermaid-font-family); font-size: 12px; background: var(--cluster-fill); border: 1px solid var(--cluster-border); border-radius: 2px; pointer-events: none; z-index: 100; }
-.actor { stroke: var(--node-border); fill: var(--node-fill); }
-text.actor { fill: black; stroke: none; }
-.actor-line { stroke: grey; }
-.messageLine0 { stroke-width: 1.5; stroke: var(--text-color); }
-.messageLine1 { stroke-width: 1.5; stroke: var(--text-color); }
-#arrowhead { fill: var(--text-color); }
-.sequenceNumber { fill: white; }
-#sequencenumber { fill: var(--text-color); }
-#crosshead path { fill: var(--text-color)  !important; stroke: var(--text-color)  !important; }
-.messageText { fill: var(--text-color); stroke: none; }
-.labelBox { stroke: var(--node-border); fill: var(--node-fill); }
-.labelText { fill: black; stroke: none; }
-.loopText { fill: black; stroke: none; }
-.loopLine { stroke-width: 2; stroke: var(--node-border); }
-.note { stroke: var(--cluster-border); fill: rgb(255, 245, 173); }
-.noteText { fill: black; stroke: none; font-family: var(--mermaid-font-family); font-size: 14px; }
-.activation0 { fill: rgb(244, 244, 244); stroke: rgb(102, 102, 102); }
-.activation1 { fill: rgb(244, 244, 244); stroke: rgb(102, 102, 102); }
-.activation2 { fill: rgb(244, 244, 244); stroke: rgb(102, 102, 102); }
-.mermaid-main-font { font-family: var(--mermaid-font-family); }
-.section { stroke: none; opacity: 0.2; }
-.section0 { fill: rgba(102, 102, 255, 0.49); }
-.section2 { fill: rgb(255, 244, 0); }
-.section1, .section3 { fill: white; opacity: 0.2; }
-.sectionTitle0 { fill: var(--text-color); }
-.sectionTitle1 { fill: var(--text-color); }
-.sectionTitle2 { fill: var(--text-color); }
-.sectionTitle3 { fill: var(--text-color); }
-.sectionTitle { text-anchor: start; font-size: 11px; font-family: var(--mermaid-font-family); }
-.grid .tick { stroke: lightgrey; opacity: 0.3; shape-rendering: crispedges; }
-.grid .tick text { font-family: var(--mermaid-font-family); }
-.grid path { stroke-width: 0; }
-.today { fill: none; stroke: red; stroke-width: 2px; }
-.task { stroke-width: 2; }
-.taskText { text-anchor: middle; font-family: var(--mermaid-font-family); }
-.taskText:not([font-size]) { font-size: 11px; }
-.taskTextOutsideRight { fill: black; text-anchor: start; font-size: 11px; font-family: var(--mermaid-font-family); }
-.taskTextOutsideLeft { fill: black; text-anchor: end; font-size: 11px; }
-.task.clickable { cursor: pointer; }
-.taskText.clickable { cursor: pointer; font-weight: bold; fill: rgb(0, 49, 99) !important; }
-.taskTextOutsideLeft.clickable { cursor: pointer; font-weight: bold; fill: rgb(0, 49, 99) !important; }
-.taskTextOutsideRight.clickable { cursor: pointer; font-weight: bold; fill: rgb(0, 49, 99) !important; }
-.taskText0, .taskText1, .taskText2, .taskText3 { fill: white; }
-.task0, .task1, .task2, .task3 { fill: rgb(138, 144, 221); stroke: rgb(83, 79, 188); }
-.taskTextOutside0, .taskTextOutside2 { fill: black; }
-.taskTextOutside1, .taskTextOutside3 { fill: black; }
-.active0, .active1, .active2, .active3 { fill: rgb(191, 199, 255); stroke: rgb(83, 79, 188); }
-.activeText0, .activeText1, .activeText2, .activeText3 { fill: black !important; }
-.done0, .done1, .done2, .done3 { stroke: grey; fill: lightgrey; stroke-width: 2; }
-.doneText0, .doneText1, .doneText2, .doneText3 { fill: black !important; }
-.crit0, .crit1, .crit2, .crit3 { stroke: rgb(255, 136, 136); fill: red; stroke-width: 2; }
-.activeCrit0, .activeCrit1, .activeCrit2, .activeCrit3 { stroke: rgb(255, 136, 136); fill: rgb(191, 199, 255); stroke-width: 2; }
-.doneCrit0, .doneCrit1, .doneCrit2, .doneCrit3 { stroke: rgb(255, 136, 136); fill: lightgrey; stroke-width: 2; cursor: pointer; shape-rendering: crispedges; }
-.milestone { transform: rotate(45deg) scale(0.8, 0.8); }
-.milestoneText { font-style: italic; }
-.doneCritText0, .doneCritText1, .doneCritText2, .doneCritText3 { fill: black !important; }
-.activeCritText0, .activeCritText1, .activeCritText2, .activeCritText3 { fill: black !important; }
-.titleText { text-anchor: middle; font-size: 18px; fill: black; font-family: var(--mermaid-font-family); }
-g.classGroup text { fill: rgb(147, 112, 219); stroke: none; font-family: var(--mermaid-font-family); font-size: 10px; }
-g.classGroup text .title { font-weight: bolder; }
-g.classGroup rect { fill: var(--node-fill); stroke: rgb(147, 112, 219); }
-g.classGroup line { stroke: rgb(147, 112, 219); stroke-width: 1; }
-.classLabel .box { stroke: none; stroke-width: 0; fill: var(--node-fill); opacity: 0.5; }
-.classLabel .label { fill: rgb(147, 112, 219); font-size: 10px; }
-.relation { stroke: rgb(147, 112, 219); stroke-width: 1; fill: none; }
-#compositionStart { fill: rgb(147, 112, 219); stroke: rgb(147, 112, 219); stroke-width: 1; }
-#compositionEnd { fill: rgb(147, 112, 219); stroke: rgb(147, 112, 219); stroke-width: 1; }
-#aggregationStart { fill: var(--node-fill); stroke: rgb(147, 112, 219); stroke-width: 1; }
-#aggregationEnd { fill: var(--node-fill); stroke: rgb(147, 112, 219); stroke-width: 1; }
-#dependencyStart { fill: rgb(147, 112, 219); stroke: rgb(147, 112, 219); stroke-width: 1; }
-#dependencyEnd { fill: rgb(147, 112, 219); stroke: rgb(147, 112, 219); stroke-width: 1; }
-#extensionStart { fill: rgb(147, 112, 219); stroke: rgb(147, 112, 219); stroke-width: 1; }
-#extensionEnd { fill: rgb(147, 112, 219); stroke: rgb(147, 112, 219); stroke-width: 1; }
-.commit-id, .commit-msg, .branch-label { fill: lightgrey; color: lightgrey; font-family: var(--mermaid-font-family); }
-.pieTitleText { text-anchor: middle; font-size: 25px; fill: black; font-family: var(--mermaid-font-family); }
-.slice { font-family: var(--mermaid-font-family); }
-g.stateGroup text { fill: rgb(147, 112, 219); stroke: none; font-size: 10px; font-family: var(--mermaid-font-family); }
-g.stateGroup text { fill: rgb(147, 112, 219); stroke: none; font-size: 10px; }
-g.stateGroup .state-title { font-weight: bolder; fill: black; }
-g.stateGroup rect { fill: var(--node-fill); stroke: rgb(147, 112, 219); }
-g.stateGroup line { stroke: rgb(147, 112, 219); stroke-width: 1; }
-.transition { stroke: rgb(147, 112, 219); stroke-width: 1; fill: none; }
-.stateGroup .composit { fill: white; border-bottom: 1px; }
-.state-note { stroke: var(--cluster-border); fill: rgb(255, 245, 173); }
-.state-note text { fill: black; stroke: none; font-size: 10px; }
-.stateLabel .box { stroke: none; stroke-width: 0; fill: var(--node-fill); opacity: 0.5; }
-.stateLabel text { fill: black; font-size: 10px; font-weight: bold; font-family: var(--mermaid-font-family); }
-.node text { font-size: 14px; }
-div.mermaidTooltip { position: absolute; text-align: center; max-width: 200px; padding: 2px; font-family: var(--mermaid-font-family); font-size: 12px; background: var(--cluster-fill); border: 1px solid var(--cluster-border); border-radius: 2px; pointer-events: none; z-index: 100; }
-#write .md-diagram-panel .md-diagram-panel-preview div { width: initial; }
 
 
-:root { --bg-color:#ffffff; --text-color:#333333; --select-text-bg-color:#B5D6FC; --select-text-font-color:auto; --monospace:"Lucida Console",Consolas,"Courier",monospace; }
+:root { --bg-color:#ffffff; --text-color:#333333; --select-text-bg-color:#B5D6FC; --select-text-font-color:auto; --monospace:"Lucida Console",Consolas,"Courier",monospace; --title-bar-height:20px; }
+.mac-os-11 { --title-bar-height:28px; }
 html { font-size: 14px; background-color: var(--bg-color); color: var(--text-color); font-family: "Helvetica Neue", Helvetica, Arial, sans-serif; -webkit-font-smoothing: antialiased; }
 body { margin: 0px; padding: 0px; height: auto; bottom: 0px; top: 0px; left: 0px; right: 0px; font-size: 1rem; line-height: 1.42857; overflow-x: hidden; background: inherit; tab-size: 4; }
 iframe { margin: auto; }
 a.url { word-break: break-all; }
 a:active, a:hover { outline: 0px; }
 .in-text-selection, ::selection { text-shadow: none; background: var(--select-text-bg-color); color: var(--select-text-font-color); }
-#write { margin: 0px auto; height: auto; width: inherit; word-break: normal; overflow-wrap: break-word; position: relative; white-space: normal; overflow-x: visible; padding-top: 40px; }
+#write { margin: 0px auto; height: auto; width: inherit; word-break: normal; overflow-wrap: break-word; position: relative; white-space: normal; overflow-x: visible; padding-top: 36px; }
 #write.first-line-indent p { text-indent: 2em; }
 #write.first-line-indent li p, #write.first-line-indent p * { text-indent: 0px; }
 #write.first-line-indent li { margin-left: 2em; }
 .for-image #write { padding-left: 8px; padding-right: 8px; }
 body.typora-export { padding-left: 30px; padding-right: 30px; }
 .typora-export .footnote-line, .typora-export li, .typora-export p { white-space: pre-wrap; }
+.typora-export .task-list-item input { pointer-events: none; }
 @media screen and (max-width: 500px) {
   body.typora-export { padding-left: 0px; padding-right: 0px; }
   #write { padding-left: 20px; padding-right: 20px; }
@@ -128,14 +29,14 @@ body.typora-export { padding-left: 30px; padding-right: 30px; }
 }
 #write li > figure:last-child { margin-bottom: 0.5rem; }
 #write ol, #write ul { position: relative; }
-img { max-width: 100%; vertical-align: middle; }
+img { max-width: 100%; vertical-align: middle; image-orientation: from-image; }
 button, input, select, textarea { color: inherit; font: inherit; }
 input[type="checkbox"], input[type="radio"] { line-height: normal; padding: 0px; }
 *, ::after, ::before { box-sizing: border-box; }
 #write h1, #write h2, #write h3, #write h4, #write h5, #write h6, #write p, #write pre { width: inherit; }
 #write h1, #write h2, #write h3, #write h4, #write h5, #write h6, #write p { position: relative; }
 p { line-height: inherit; }
-h1, h2, h3, h4, h5, h6 { break-after: avoid-page; break-inside: avoid; orphans: 2; }
+h1, h2, h3, h4, h5, h6 { break-after: avoid-page; break-inside: avoid; orphans: 4; }
 p { orphans: 4; }
 h1 { font-size: 2rem; }
 h2 { font-size: 1.8rem; }
@@ -151,7 +52,7 @@ sup.md-footnote { padding: 2px 4px; background-color: rgba(238, 238, 238, 0.7); 
 sup.md-footnote a, sup.md-footnote a:hover { color: inherit; text-transform: inherit; text-decoration: inherit; }
 #write input[type="checkbox"] { cursor: pointer; width: inherit; height: inherit; }
 figure { overflow-x: auto; margin: 1.2em 0px; max-width: calc(100% + 16px); padding: 0px; }
-figure > table { margin: 0px !important; }
+figure > table { margin: 0px; }
 tr { break-inside: avoid; break-after: auto; }
 thead { display: table-header-group; }
 table { border-collapse: collapse; border-spacing: 0px; width: 100%; overflow: auto; break-inside: auto; text-align: left; }
@@ -180,28 +81,31 @@ div.hr:focus { cursor: none; }
 li div { padding-top: 0px; }
 blockquote { margin: 1rem 0px; }
 li .mathjax-block, li p { margin: 0.5rem 0px; }
+li blockquote { margin: 1rem 0px; }
 li { margin: 0px; position: relative; }
 blockquote > :last-child { margin-bottom: 0px; }
 blockquote > :first-child, li > :first-child { margin-top: 0px; }
 .footnotes-area { color: rgb(136, 136, 136); margin-top: 0.714rem; padding-bottom: 0.143rem; white-space: normal; }
 #write .footnote-line { white-space: pre-wrap; }
 @media print {
-  body, html { border: 1px solid transparent; height: 99%; break-after: avoid; break-before: avoid; }
+  body, html { border: 1px solid transparent; height: 99%; break-after: avoid; break-before: avoid; font-variant-ligatures: no-common-ligatures; }
   #write { margin-top: 0px; padding-top: 0px; border-color: transparent !important; }
   .typora-export * { -webkit-print-color-adjust: exact; }
-  html.blink-to-pdf { font-size: 13px; }
-  .typora-export #write { padding-left: 32px; padding-right: 32px; padding-bottom: 0px; break-after: avoid; }
+  .typora-export #write { break-after: avoid; }
   .typora-export #write::after { height: 0px; }
+  .is-mac table { break-inside: avoid; }
 }
 .footnote-line { margin-top: 0.714em; font-size: 0.7em; }
 a img, img a { cursor: pointer; }
 pre.md-meta-block { font-size: 0.8rem; min-height: 0.8rem; white-space: pre-wrap; background: rgb(204, 204, 204); display: block; overflow-x: hidden; }
 p > .md-image:only-child:not(.md-img-error) img, p > img:only-child { display: block; margin: auto; }
+#write.first-line-indent p > .md-image:only-child:not(.md-img-error) img { left: -2em; position: relative; }
 p > .md-image:only-child { display: inline-block; width: 100%; }
 #write .MathJax_Display { margin: 0.8em 0px 0px; }
 .md-math-block { width: 100%; }
 .md-math-block:not(:empty)::after { display: none; }
-[contenteditable="true"]:active, [contenteditable="true"]:focus { outline: 0px; box-shadow: none; }
+.MathJax_ref { fill: currentcolor; }
+[contenteditable="true"]:active, [contenteditable="true"]:focus, [contenteditable="false"]:active, [contenteditable="false"]:focus { outline: 0px; box-shadow: none; }
 .md-task-list-item { position: relative; list-style-type: none; }
 .task-list-item.md-task-list-item { padding-left: 0px; }
 .md-task-list-item > input { position: absolute; top: 0px; left: 0px; margin-left: -1.2em; margin-top: calc(1em - 10px); border: none; }
@@ -245,16 +149,22 @@ a.md-print-anchor { white-space: pre !important; border-width: initial !importan
 .MathJax_SVG_Display svg { vertical-align: middle !important; margin-bottom: 0px !important; margin-top: 0px !important; }
 .os-windows.monocolor-emoji .md-emoji { font-family: "Segoe UI Symbol", sans-serif; }
 .md-diagram-panel > svg { max-width: 100%; }
-[lang="mermaid"] svg, [lang="flow"] svg { max-width: 100%; height: auto; }
+[lang="flow"] svg, [lang="mermaid"] svg { max-width: 100%; height: auto; }
 [lang="mermaid"] .node text { font-size: 1rem; }
 table tr th { border-bottom: 0px; }
 video { max-width: 100%; display: block; margin: 0px auto; }
 iframe { max-width: 100%; width: 100%; border: none; }
 .highlight td, .highlight tr { border: 0px; }
-svg[id^="mermaidChart"] { line-height: 1em; }
 mark { background: rgb(255, 255, 0); color: rgb(0, 0, 0); }
 .md-html-inline .md-plain, .md-html-inline strong, mark .md-inline-math, mark strong { color: inherit; }
 mark .md-meta { color: rgb(0, 0, 0); opacity: 0.3 !important; }
+@media print {
+  .typora-export h1, .typora-export h2, .typora-export h3, .typora-export h4, .typora-export h5, .typora-export h6 { break-inside: avoid; }
+}
+.md-diagram-panel .messageText { stroke: none !important; }
+.md-diagram-panel .start-state { fill: var(--node-fill); }
+.md-diagram-panel .edgeLabel rect { opacity: 1 !important; }
+.md-require-zoom-fix foreignobject { font-size: var(--mermaid-font-zoom); }
 
 
 .CodeMirror { height: auto; }
@@ -337,12 +247,16 @@ div.CodeMirror span.CodeMirror-nonmatchingbracket { color: rgb(255, 34, 34); }
 
 @include-when-export url(https://fonts.loli.net/css?family=Open+Sans:400italic,700italic,700,400&subset=latin,latin-ext);
 
-html {
+/* open-sans-regular - latin-ext_latin */
+  /* open-sans-italic - latin-ext_latin */
+    /* open-sans-700 - latin-ext_latin */
+    /* open-sans-700italic - latin-ext_latin */
+  html {
     font-size: 16px;
 }
 
 body {
-    font-family: "Open Sans","Clear Sans","Helvetica Neue",Helvetica,Arial,sans-serif;
+    font-family: "Open Sans","Clear Sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
     color: rgb(51, 51, 51);
     line-height: 1.6;
 }
@@ -353,6 +267,19 @@ body {
   	padding: 30px;
     padding-bottom: 100px;
 }
+
+@media only screen and (min-width: 1400px) {
+	#write {
+		max-width: 1024px;
+	}
+}
+
+@media only screen and (min-width: 1800px) {
+	#write {
+		max-width: 1200px;
+	}
+}
+
 #write > ul:first-child,
 #write > ol:first-child{
     margin-top: 30px;
@@ -407,17 +334,33 @@ h6 code {
     font-size: inherit;
 }
 h1 {
-    padding-bottom: .3em;
     font-size: 2.25em;
     line-height: 1.2;
     border-bottom: 1px solid #eee;
 }
 h2 {
-   padding-bottom: .3em;
     font-size: 1.75em;
     line-height: 1.225;
     border-bottom: 1px solid #eee;
 }
+
+/*@media print {
+    .typora-export h1,
+    .typora-export h2 {
+        border-bottom: none;
+        padding-bottom: initial;
+    }
+
+    .typora-export h1::after,
+    .typora-export h2::after {
+        content: "";
+        display: block;
+        height: 100px;
+        margin-top: -96px;
+        border-top: 1px solid #eee;
+    }
+}*/
+
 h3 {
     font-size: 1.5em;
     line-height: 1.43;
@@ -490,24 +433,24 @@ table tr:nth-child(2n),
 thead {
     background-color: #f8f8f8;
 }
-table tr th {
+table th {
     font-weight: bold;
     border: 1px solid #dfe2e5;
     border-bottom: 0;
     margin: 0;
     padding: 6px 13px;
 }
-table tr td {
+table td {
     border: 1px solid #dfe2e5;
     margin: 0;
     padding: 6px 13px;
 }
-table tr th:first-child,
-table tr td:first-child {
+table th:first-child,
+table td:first-child {
     margin-top: 0;
 }
-table tr th:last-child,
-table tr td:last-child {
+table th:last-child,
+table td:last-child {
     margin-bottom: 0;
 }
 
@@ -677,12 +620,10 @@ header, .context-menu, .megamenu-content, footer{
     background: #999;
 }
 
-
+ .typora-export li, .typora-export p, .typora-export,  .footnote-line {white-space: normal;} 
 </style>
 </head>
-<body class='typora-export os-windows' >
-<div  id='write'  class = 'is-node'><h1><a name="비잔티움-제국" class="md-header-anchor"></a><span>비잔티움 제국 </span></h1><h2><a name="비잔티움-제국-왕조" class="md-header-anchor"></a><span>비잔티움 제국 왕조</span></h2><div class="md-diagram-panel"><svg id="mermaidChart0" width="100%" xmlns="http://www.w3.org/2000/svg" height="100%" viewBox="0 0 1138 412"><style>
-:root { --mermaid-font-family: sans-serif}
-:root { --mermaid-alt-font-family: sans-serif}</style><style></style><g></g><g class="grid" transform="translate(75, 362)" fill="none" font-size="10" font-family="sans-serif" text-anchor="middle"><path class="domain" stroke="currentColor" d="M0.5,-327V0.5H1043.5V-327"></path><g class="tick" opacity="1" transform="translate(20.5,0)"><line stroke="currentColor" y2="-327"></line><text fill="#000" y="3" dy="1em" stroke="none" font-size="10" style="text-anchor: middle;">0400-01-01</text></g><g class="tick" opacity="1" transform="translate(118.5,0)"><line stroke="currentColor" y2="-327"></line><text fill="#000" y="3" dy="1em" stroke="none" font-size="10" style="text-anchor: middle;">0500-01-01</text></g><g class="tick" opacity="1" transform="translate(215.5,0)"><line stroke="currentColor" y2="-327"></line><text fill="#000" y="3" dy="1em" stroke="none" font-size="10" style="text-anchor: middle;">0600-01-01</text></g><g class="tick" opacity="1" transform="translate(312.5,0)"><line stroke="currentColor" y2="-327"></line><text fill="#000" y="3" dy="1em" stroke="none" font-size="10" style="text-anchor: middle;">0700-01-01</text></g><g class="tick" opacity="1" transform="translate(409.5,0)"><line stroke="currentColor" y2="-327"></line><text fill="#000" y="3" dy="1em" stroke="none" font-size="10" style="text-anchor: middle;">0800-01-01</text></g><g class="tick" opacity="1" transform="translate(506.5,0)"><line stroke="currentColor" y2="-327"></line><text fill="#000" y="3" dy="1em" stroke="none" font-size="10" style="text-anchor: middle;">0900-01-01</text></g><g class="tick" opacity="1" transform="translate(603.5,0)"><line stroke="currentColor" y2="-327"></line><text fill="#000" y="3" dy="1em" stroke="none" font-size="10" style="text-anchor: middle;">1000-01-01</text></g><g class="tick" opacity="1" transform="translate(700.5,0)"><line stroke="currentColor" y2="-327"></line><text fill="#000" y="3" dy="1em" stroke="none" font-size="10" style="text-anchor: middle;">1100-01-01</text></g><g class="tick" opacity="1" transform="translate(797.5,0)"><line stroke="currentColor" y2="-327"></line><text fill="#000" y="3" dy="1em" stroke="none" font-size="10" style="text-anchor: middle;">1200-01-01</text></g><g class="tick" opacity="1" transform="translate(894.5,0)"><line stroke="currentColor" y2="-327"></line><text fill="#000" y="3" dy="1em" stroke="none" font-size="10" style="text-anchor: middle;">1300-01-01</text></g><g class="tick" opacity="1" transform="translate(992.5,0)"><line stroke="currentColor" y2="-327"></line><text fill="#000" y="3" dy="1em" stroke="none" font-size="10" style="text-anchor: middle;">1400-01-01</text></g></g><g><rect x="0" y="48" width="1128" height="24" class="section section0"></rect><rect x="0" y="72" width="1128" height="24" class="section section0"></rect><rect x="0" y="96" width="1128" height="24" class="section section0"></rect><rect x="0" y="120" width="1128" height="24" class="section section0"></rect><rect x="0" y="144" width="1128" height="24" class="section section0"></rect><rect x="0" y="168" width="1128" height="24" class="section section0"></rect><rect x="0" y="192" width="1128" height="24" class="section section0"></rect><rect x="0" y="216" width="1128" height="24" class="section section0"></rect><rect x="0" y="240" width="1128" height="24" class="section section0"></rect><rect x="0" y="264" width="1128" height="24" class="section section0"></rect><rect x="0" y="288" width="1128" height="24" class="section section0"></rect><rect x="0" y="312" width="1128" height="24" class="section section0"></rect><rect x="0" y="336" width="1128" height="24" class="section section0"></rect></g><g><rect id="task1" rx="3" ry="3" x="75" y="50" width="76" height="20" transform-origin="113px 60px" class="task task0 "></rect><rect id="task2" rx="3" ry="3" x="151" y="74" width="59" height="20" transform-origin="180.5px 84px" class="task task0 "></rect><rect id="task3" rx="3" ry="3" x="210" y="98" width="82" height="20" transform-origin="251px 108px" class="task task0 "></rect><rect id="task4" rx="3" ry="3" x="299" y="122" width="98" height="20" transform-origin="348px 132px" class="task task0 "></rect><rect id="task5" rx="3" ry="3" x="403" y="146" width="83" height="20" transform-origin="444.5px 156px" class="task task0 "></rect><rect id="task6" rx="3" ry="3" x="486" y="170" width="10" height="20" transform-origin="491px 180px" class="task task0 "></rect><rect id="task7" rx="3" ry="3" x="503" y="194" width="46" height="20" transform-origin="526px 204px" class="task task0 "></rect><rect id="task8" rx="3" ry="3" x="549" y="218" width="183" height="20" transform-origin="640.5px 228px" class="task task0 "></rect><rect id="task9" rx="3" ry="3" x="735" y="242" width="22" height="20" transform-origin="746px 252px" class="task task0 "></rect><rect id="task10" rx="3" ry="3" x="757" y="266" width="101" height="20" transform-origin="807.5px 276px" class="task task0 "></rect><rect id="task11" rx="3" ry="3" x="858" y="290" width="18" height="20" transform-origin="867px 300px" class="task task0 "></rect><rect id="task12" rx="3" ry="3" x="876" y="314" width="56" height="20" transform-origin="904px 324px" class="task task0 "></rect><rect id="task13" rx="3" ry="3" x="930" y="338" width="188" height="20" transform-origin="1024px 348px" class="task task0 "></rect><text id="task1-text" font-size="11" x="113" y="63.5" text-height="20" class=" taskText taskText0  width-66">테오도시우스      </text><text id="task2-text" font-size="11" x="180.5" y="87.5" text-height="20" class=" taskText taskText0  width-22">레오             </text><text id="task3-text" font-size="11" x="251" y="111.5" text-height="20" class=" taskText taskText0  width-77">유스티니아누스   </text><text id="task4-text" font-size="11" x="348" y="135.5" text-height="20" class=" taskText taskText0  width-66">헤라클리우스     </text><text id="task5-text" font-size="11" x="444.5" y="159.5" text-height="20" class=" taskText taskText0  width-55">이사우리아       </text><text id="task6-text" font-size="11" x="501" y="183.5" text-height="20" class=" taskTextOutsideRight taskTextOutside0  width-55">니키포로스         </text><text id="task7-text" font-size="11" x="526" y="207.5" text-height="20" class=" taskText taskText0  width-44">아모리아         </text><text id="task8-text" font-size="11" x="640.5" y="231.5" text-height="20" class=" taskText taskText0  width-55">마케도니아         </text><text id="task9-text" font-size="11" x="762" y="255.5" text-height="20" class=" taskTextOutsideRight taskTextOutside0  width-33">두카스             </text><text id="task10-text" font-size="11" x="807.5" y="279.5" text-height="20" class=" taskText taskText0  width-44">콤네노스         </text><text id="task11-text" font-size="11" x="881" y="303.5" text-height="20" class=" taskTextOutsideRight taskTextOutside0  width-44">앙겔로스         </text><text id="task12-text" font-size="11" x="904" y="327.5" text-height="20" class=" taskText taskText0  width-55">라스카리스         </text><text id="task13-text" font-size="11" x="1024" y="351.5" text-height="20" class=" taskText taskText0  width-77">팔라이올로고스     </text></g><g><text x="10" y="206" class="sectionTitle sectionTitle0"></text></g><g class="today"><line x1="1669" x2="1669" y1="25" y2="387" class="today"></line></g><text x="569" y="25" class="titleText"></text></svg></div></div>
+<body class='typora-export os-windows'>
+<div id='write'  class=''><h1><a name="비잔티움-제국" class="md-header-anchor"></a><span>비잔티움 제국 </span></h1><h2><a name="비잔티움-제국-왕조" class="md-header-anchor"></a><span>비잔티움 제국 왕조</span></h2><div class="md-diagram-panel"><svg id="mermaidChart0" width="100%" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1136 412" height="412" style="max-width: 1136px; height: 452px;" class="md-require-zoom-fix"><style>#mermaidChart0{font-family:"trebuchet ms",verdana,arial,sans-serif;font-size:16px;fill:#333333;}#mermaidChart0 .error-icon{fill:hsl(60,100%,100%);}#mermaidChart0 .error-text{fill:rgb(0,0,0);stroke:rgb(0,0,0);}#mermaidChart0 .edge-thickness-normal{stroke-width:2px;}#mermaidChart0 .edge-thickness-thick{stroke-width:3.5px;}#mermaidChart0 .edge-pattern-solid{stroke-dasharray:0;}#mermaidChart0 .edge-pattern-dashed{stroke-dasharray:3;}#mermaidChart0 .edge-pattern-dotted{stroke-dasharray:2;}#mermaidChart0 .marker{fill:#000000;}#mermaidChart0 .marker.cross{stroke:#000000;}#mermaidChart0 svg{font-family:"trebuchet ms",verdana,arial,sans-serif;font-size:16px;}#mermaidChart0 .mermaid-main-font{font-family:"trebuchet ms",verdana,arial;font-family:var(--mermaid-font-family);}#mermaidChart0 .section{stroke:none;opacity:0.2;}#mermaidChart0 .section0{fill:hsl(60,100%,100%);}#mermaidChart0 .section2{fill:#ECECFF;}#mermaidChart0 .section1,#mermaidChart0 .section3{fill:white;opacity:0.2;}#mermaidChart0 .sectionTitle0{fill:rgb(0,0,0);}#mermaidChart0 .sectionTitle1{fill:rgb(0,0,0);}#mermaidChart0 .sectionTitle2{fill:rgb(0,0,0);}#mermaidChart0 .sectionTitle3{fill:rgb(0,0,0);}#mermaidChart0 .sectionTitle{text-anchor:start;font-size:11px;text-height:14px;font-family:'trebuchet ms',verdana,arial;font-family:var(--mermaid-font-family);}#mermaidChart0 .grid .tick{stroke:lightgrey;opacity:0.8;shape-rendering:crispEdges;}#mermaidChart0 .grid .tick text{font-family:"trebuchet ms",verdana,arial,sans-serif;fill:#333333;}#mermaidChart0 .grid path{stroke-width:0;}#mermaidChart0 .today{fill:none;stroke:red;stroke-width:2px;}#mermaidChart0 .task{stroke-width:2;}#mermaidChart0 .taskText{text-anchor:middle;font-family:'trebuchet ms',verdana,arial;font-family:var(--mermaid-font-family);}#mermaidChart0 .taskText:not([font-size]){font-size:11px;}#mermaidChart0 .taskTextOutsideRight{fill:#333333;text-anchor:start;font-size:11px;font-family:'trebuchet ms',verdana,arial;font-family:var(--mermaid-font-family);}#mermaidChart0 .taskTextOutsideLeft{fill:#333333;text-anchor:end;font-size:11px;}#mermaidChart0 .task.clickable{cursor:pointer;}#mermaidChart0 .taskText.clickable{cursor:pointer;fill:#003163 !important;font-weight:bold;}#mermaidChart0 .taskTextOutsideLeft.clickable{cursor:pointer;fill:#003163 !important;font-weight:bold;}#mermaidChart0 .taskTextOutsideRight.clickable{cursor:pointer;fill:#003163 !important;font-weight:bold;}#mermaidChart0 .taskText0,#mermaidChart0 .taskText1,#mermaidChart0 .taskText2,#mermaidChart0 .taskText3{fill:#333333;}#mermaidChart0 .task0,#mermaidChart0 .task1,#mermaidChart0 .task2,#mermaidChart0 .task3{fill:#ECECFF;stroke:hsl(240,60%,86.2745098039%);}#mermaidChart0 .taskTextOutside0,#mermaidChart0 .taskTextOutside2{fill:#333333;}#mermaidChart0 .taskTextOutside1,#mermaidChart0 .taskTextOutside3{fill:#333333;}#mermaidChart0 .active0,#mermaidChart0 .active1,#mermaidChart0 .active2,#mermaidChart0 .active3{fill:hsl(240,100%,100%);stroke:#ECECFF;}#mermaidChart0 .activeText0,#mermaidChart0 .activeText1,#mermaidChart0 .activeText2,#mermaidChart0 .activeText3{fill:#333333 !important;}#mermaidChart0 .done0,#mermaidChart0 .done1,#mermaidChart0 .done2,#mermaidChart0 .done3{stroke:grey;fill:lightgrey;stroke-width:2;}#mermaidChart0 .doneText0,#mermaidChart0 .doneText1,#mermaidChart0 .doneText2,#mermaidChart0 .doneText3{fill:#333333 !important;}#mermaidChart0 .crit0,#mermaidChart0 .crit1,#mermaidChart0 .crit2,#mermaidChart0 .crit3{stroke:#ff8888;fill:red;stroke-width:2;}#mermaidChart0 .activeCrit0,#mermaidChart0 .activeCrit1,#mermaidChart0 .activeCrit2,#mermaidChart0 .activeCrit3{stroke:#ff8888;fill:hsl(240,100%,100%);stroke-width:2;}#mermaidChart0 .doneCrit0,#mermaidChart0 .doneCrit1,#mermaidChart0 .doneCrit2,#mermaidChart0 .doneCrit3{stroke:#ff8888;fill:lightgrey;stroke-width:2;cursor:pointer;shape-rendering:crispEdges;}#mermaidChart0 .milestone{-webkit-transform:rotate(45deg) scale(0.8,0.8);-ms-transform:rotate(45deg) scale(0.8,0.8);transform:rotate(45deg) scale(0.8,0.8);}#mermaidChart0 .milestoneText{font-style:italic;}#mermaidChart0 .doneCritText0,#mermaidChart0 .doneCritText1,#mermaidChart0 .doneCritText2,#mermaidChart0 .doneCritText3{fill:#333333 !important;}#mermaidChart0 .activeCritText0,#mermaidChart0 .activeCritText1,#mermaidChart0 .activeCritText2,#mermaidChart0 .activeCritText3{fill:#333333 !important;}#mermaidChart0 .titleText{text-anchor:middle;font-size:18px;fill:var(--text-color);font-family:'trebuchet ms',verdana,arial;font-family:var(--mermaid-font-family);}#mermaidChart0:root{--mermaid-font-family:sans-serif;}#mermaidChart0:root{--mermaid-alt-font-family:sans-serif;}#mermaidChart0 gantt{fill:apa;}</style><g></g><g class="grid" transform="translate(75, 362)" fill="none" font-size="10" font-family="sans-serif" text-anchor="middle"><path class="domain" stroke="currentColor" d="M0.5,-327V0.5H1041.5V-327"></path><g class="tick" opacity="1" transform="translate(20.5,0)"><line stroke="currentColor" y2="-327"></line><text fill="#000" y="3" dy="1em" stroke="none" font-size="10" style="text-anchor: middle;">0400</text></g><g class="tick" opacity="1" transform="translate(117.5,0)"><line stroke="currentColor" y2="-327"></line><text fill="#000" y="3" dy="1em" stroke="none" font-size="10" style="text-anchor: middle;">0500</text></g><g class="tick" opacity="1" transform="translate(214.5,0)"><line stroke="currentColor" y2="-327"></line><text fill="#000" y="3" dy="1em" stroke="none" font-size="10" style="text-anchor: middle;">0600</text></g><g class="tick" opacity="1" transform="translate(311.5,0)"><line stroke="currentColor" y2="-327"></line><text fill="#000" y="3" dy="1em" stroke="none" font-size="10" style="text-anchor: middle;">0700</text></g><g class="tick" opacity="1" transform="translate(408.5,0)"><line stroke="currentColor" y2="-327"></line><text fill="#000" y="3" dy="1em" stroke="none" font-size="10" style="text-anchor: middle;">0800</text></g><g class="tick" opacity="1" transform="translate(505.5,0)"><line stroke="currentColor" y2="-327"></line><text fill="#000" y="3" dy="1em" stroke="none" font-size="10" style="text-anchor: middle;">0900</text></g><g class="tick" opacity="1" transform="translate(602.5,0)"><line stroke="currentColor" y2="-327"></line><text fill="#000" y="3" dy="1em" stroke="none" font-size="10" style="text-anchor: middle;">1000</text></g><g class="tick" opacity="1" transform="translate(699.5,0)"><line stroke="currentColor" y2="-327"></line><text fill="#000" y="3" dy="1em" stroke="none" font-size="10" style="text-anchor: middle;">1100</text></g><g class="tick" opacity="1" transform="translate(796.5,0)"><line stroke="currentColor" y2="-327"></line><text fill="#000" y="3" dy="1em" stroke="none" font-size="10" style="text-anchor: middle;">1200</text></g><g class="tick" opacity="1" transform="translate(893.5,0)"><line stroke="currentColor" y2="-327"></line><text fill="#000" y="3" dy="1em" stroke="none" font-size="10" style="text-anchor: middle;">1300</text></g><g class="tick" opacity="1" transform="translate(990.5,0)"><line stroke="currentColor" y2="-327"></line><text fill="#000" y="3" dy="1em" stroke="none" font-size="10" style="text-anchor: middle;">1400</text></g></g><g><rect x="0" y="48" width="1126" height="24" class="section section0"></rect><rect x="0" y="72" width="1126" height="24" class="section section0"></rect><rect x="0" y="96" width="1126" height="24" class="section section0"></rect><rect x="0" y="120" width="1126" height="24" class="section section0"></rect><rect x="0" y="144" width="1126" height="24" class="section section0"></rect><rect x="0" y="168" width="1126" height="24" class="section section0"></rect><rect x="0" y="192" width="1126" height="24" class="section section0"></rect><rect x="0" y="216" width="1126" height="24" class="section section0"></rect><rect x="0" y="240" width="1126" height="24" class="section section0"></rect><rect x="0" y="264" width="1126" height="24" class="section section0"></rect><rect x="0" y="288" width="1126" height="24" class="section section0"></rect><rect x="0" y="312" width="1126" height="24" class="section section0"></rect><rect x="0" y="336" width="1126" height="24" class="section section0"></rect></g><g><rect id="task1" rx="3" ry="3" x="75" y="50" width="76" height="20" transform-origin="113px 60px" class="task task0 "></rect><rect id="task2" rx="3" ry="3" x="151" y="74" width="59" height="20" transform-origin="180.5px 84px" class="task task0 "></rect><rect id="task3" rx="3" ry="3" x="210" y="98" width="81" height="20" transform-origin="250.5px 108px" class="task task0 "></rect><rect id="task4" rx="3" ry="3" x="299" y="122" width="98" height="20" transform-origin="348px 132px" class="task task0 "></rect><rect id="task5" rx="3" ry="3" x="403" y="146" width="82" height="20" transform-origin="444px 156px" class="task task0 "></rect><rect id="task6" rx="3" ry="3" x="485" y="170" width="11" height="20" transform-origin="490.5px 180px" class="task task0 "></rect><rect id="task7" rx="3" ry="3" x="502" y="194" width="46" height="20" transform-origin="525px 204px" class="task task0 "></rect><rect id="task8" rx="3" ry="3" x="548" y="218" width="183" height="20" transform-origin="639.5px 228px" class="task task0 "></rect><rect id="task9" rx="3" ry="3" x="734" y="242" width="21" height="20" transform-origin="744.5px 252px" class="task task0 "></rect><rect id="task10" rx="3" ry="3" x="755" y="266" width="101" height="20" transform-origin="805.5px 276px" class="task task0 "></rect><rect id="task11" rx="3" ry="3" x="856" y="290" width="19" height="20" transform-origin="865.5px 300px" class="task task0 "></rect><rect id="task12" rx="3" ry="3" x="875" y="314" width="55" height="20" transform-origin="902.5px 324px" class="task task0 "></rect><rect id="task13" rx="3" ry="3" x="928" y="338" width="188" height="20" transform-origin="1022px 348px" class="task task0 "></rect><text id="task1-text" font-size="11" x="113" y="63.5" text-height="20" class=" taskText taskText0  width-66">테오도시우스      </text><text id="task2-text" font-size="11" x="180.5" y="87.5" text-height="20" class=" taskText taskText0  width-22">레오             </text><text id="task3-text" font-size="11" x="250.5" y="111.5" text-height="20" class=" taskText taskText0  width-77">유스티니아누스   </text><text id="task4-text" font-size="11" x="348" y="135.5" text-height="20" class=" taskText taskText0  width-66">헤라클리우스     </text><text id="task5-text" font-size="11" x="444" y="159.5" text-height="20" class=" taskText taskText0  width-55">이사우리아       </text><text id="task6-text" font-size="11" x="501" y="183.5" text-height="20" class=" taskTextOutsideRight taskTextOutside0  width-55">니키포로스         </text><text id="task7-text" font-size="11" x="525" y="207.5" text-height="20" class=" taskText taskText0  width-44">아모리아         </text><text id="task8-text" font-size="11" x="639.5" y="231.5" text-height="20" class=" taskText taskText0  width-55">마케도니아         </text><text id="task9-text" font-size="11" x="760" y="255.5" text-height="20" class=" taskTextOutsideRight taskTextOutside0  width-33">두카스             </text><text id="task10-text" font-size="11" x="805.5" y="279.5" text-height="20" class=" taskText taskText0  width-44">콤네노스         </text><text id="task11-text" font-size="11" x="880" y="303.5" text-height="20" class=" taskTextOutsideRight taskTextOutside0  width-44">앙겔로스         </text><text id="task12-text" font-size="11" x="902.5" y="327.5" text-height="20" class=" taskText taskText0  width-55">라스카리스         </text><text id="task13-text" font-size="11" x="1022" y="351.5" text-height="20" class=" taskText taskText0  width-77">팔라이올로고스     </text></g><g><text dy="0em" x="10" y="206" class="sectionTitle sectionTitle0"><tspan alignment-baseline="central" x="10"></tspan></text></g><g class="today"><line x1="1667" x2="1667" y1="25" y2="387" class="today"></line></g><text x="568" y="25" class="titleText"></text></svg></div></div>
 </body>
 </html>
